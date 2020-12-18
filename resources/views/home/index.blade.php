@@ -3,13 +3,24 @@
 @section('title', 'Sub Page Title')
 
 @section('sidebar')
-    @parent
-
-    <p>Sub page data</p>
+    <div class="col-sm-4 col-lg-2" style="background-color: antiquewhite">
+      <ul>
+          <li>Bilgisayar</li>
+          <li>Elektronik</li>
+          <li>Ev Eşyaları</li>
+      </ul>
+    </div>
 @endsection
 
 @section('content')
-    <p>This is my body content.</p>
-    aaaaaaaaaaaa <br>
-    bbbbbbbbbbbb <br>
+    <div class="col-sm-8 col-lg-10">
+        <h1> Slider</h1>
+        zzzzzzzzz
+        <br>
+        bbbbbbbbbbbb <br>
+
+        <h1> İçeriklerimiz</h1>
+        dddddddddddddd<br>
+        kkkkkkkkkkkkkkkk<br>
+    </div>
 @endsection
