@@ -27,7 +27,6 @@
 @include('home._header')
 
 
-
 @section('content')
     İçerik Alanı
 @show
