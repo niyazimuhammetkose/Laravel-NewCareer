@@ -29,7 +29,9 @@
 @include('admin._sidebar')
         <div class="main-panel">
 
-@include('admin._content')
+            @section('content')
+                İçerik Alanı
+            @show
 
 @include('admin._footer')
         </div>

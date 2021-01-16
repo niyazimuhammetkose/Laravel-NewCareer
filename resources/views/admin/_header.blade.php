@@ -1,6 +1,6 @@
 <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
     <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
-        <a class="navbar-brand brand-logo" href="index.html">
+        <a class="navbar-brand brand-logo" href="{{ route('admin_home') }}">
             <img src="{{ asset('assets') }}/admin/assets/images/logo.svg" alt="logo" /> </a>
         <a class="navbar-brand brand-logo-mini" href="index.html">
             <img src="{{ asset('assets') }}/admin/assets/images/logo-mini.svg" alt="logo" /> </a>
