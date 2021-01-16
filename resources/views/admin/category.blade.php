@@ -7,8 +7,10 @@
         <div class="row page-title-header">
             <div class="col-12">
                 <div class="page-header">
-                    <h4 class="page-title">Kategoriler</h4>
                     <div class="quick-link-wrapper w-100 d-md-flex flex-md-wrap">
+                        <ul class="quick-links">
+                            <li><a href="{{route('admin_category_add')}}" type="button" class="btn btn-info btn-fw">Kategori Ekle</a></li>
+                        </ul>
                         <ul class="quick-links ml-auto">
                             <li><a href="{{ route('admin_home') }}">Anasayfa</a></li>
                             <li>Kategoriler</li>
@@ -21,6 +23,7 @@
             <div class="col-md-12 grid-margin">
                 <div class="card">
                     <div class="card-body">
+                        <h4 class="card-title">Kategoriler</h4>
                         <table class="table table-hover">
                             <thead>
                             <tr>
@@ -40,7 +43,7 @@
                                     <td>{{ $rs->title }}</td>
                                     <td>{{ $rs->status }}</td>
                                     <td>Edit</td>
-                                    <td>Delete</td>
+                                    <td><a href="{{route('admin_category_delete', ['id'=>$rs->id])}}" onclick="return confirm('Kategori Silinecek! Emin misin?')">Delete</a></td>
                                 </tr>
                             @endforeach
                             </tbody>
