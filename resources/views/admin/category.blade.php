@@ -42,8 +42,8 @@
                                     <td>{{ $rs->parent_id }}</td>
                                     <td>{{ $rs->title }}</td>
                                     <td>{{ $rs->status }}</td>
-                                    <td>Edit</td>
-                                    <td><a href="{{route('admin_category_delete', ['id'=>$rs->id])}}" onclick="return confirm('Kategori Silinecek! Emin misin?')">Delete</a></td>
+                                    <td><a href="{{route('admin_category_edit', ['id'=>$rs->id])}}">Düzenle</a></td>
+                                    <td><a href="{{route('admin_category_delete', ['id'=>$rs->id])}}" onclick="return confirm('Kategori Silinecek! Emin misin?')">Sil</a></td>
                                 </tr>
                             @endforeach
                             </tbody>

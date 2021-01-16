@@ -81,11 +81,14 @@ class CategoryController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\Category  $category
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
-    public function edit(Category $category)
+    public function edit(Category $category,$id)
     {
         //
+        $data = Category::find($id);
+        $datalist = DB::table('categories')->get()->where('parent_id', 0);
+        return view('admin.category_edit', ['data' => $data, 'datalist' => $datalist]);
     }
 
     /**
@@ -93,11 +96,20 @@ class CategoryController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Category  $category
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
      */
-    public function update(Request $request, Category $category)
+    public function update(Request $request, Category $category,$id)
     {
         //
+        $data = Category::find($id);
+        $data->parent_id = $request->input('parent_id');
+        $data->title = $request->input('title');
+        $data->keywords = $request->input('keywords');
+        $data->description = $request->input('description');
+        $data->slug = $request->input('slug');
+        $data->status = $request->input('status');
+        $data->save();
+        return redirect()->route('admin_category');
     }
 
     /**
@@ -106,10 +118,10 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
      */
-    public function destroy(Category $category,$id)
+    public function destroy(Category $category, $id)
     {
         //
-        DB::table('categories')->where('id',$id)->delete();
+        DB::table('categories')->where('id', '=', $id)->delete();
         return redirect()->route('admin_category');
     }
 }
