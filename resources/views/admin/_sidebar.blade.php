@@ -27,7 +27,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{{ route('admin_jobs') }}">
                 <i class="menu-icon typcn typcn-document-text"></i>
                 <span class="menu-title">İş İlanları</span>
             </a>

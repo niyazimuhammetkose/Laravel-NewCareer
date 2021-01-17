@@ -66,8 +66,8 @@
                                     </select>
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-success mr-2">Kategori Ekle</button>
-                            <a href="{{route('admin_category')}}" class="btn btn-light">İptal</a>
+                            <button type="submit" class="btn btn-success btn-fw"><i class="mdi mdi-check"></i>Kategori Ekle</button>
+                            <a href="{{route('admin_category')}}" class="btn btn-secondary btn-fw">İptal</a>
                         </form>
                     </div>
                 </div>
