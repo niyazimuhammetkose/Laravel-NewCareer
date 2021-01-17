@@ -31,7 +31,7 @@
             <div class="col-md-12 grid-margin">
                 <div class="card">
                     <div class="card-body">
-                        <form class="forms-sample" action="{{route('admin_jobs_update',['id'=>$data->id])}}"method="post">
+                        <form class="forms-sample" action="{{route('admin_jobs_update',['id'=>$data->id])}}"method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">Parent</label>
@@ -64,7 +64,10 @@
                             <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">Image</label>
                                 <div class="col-sm-9">
-                                    <input type="text" name="image" value="{{ $data->image }}"  class="form-control">
+                                    <input type="file" name="image" value="{{ $data->image }}"  class="form-control">
+                                    @if($data->image)
+                                        <img src="{{ \Illuminate\Support\Facades\Storage::url($data->image) }}" height="120" alt="">
+                                    @endif
                                 </div>
                             </div>
                             <div class="form-group row">

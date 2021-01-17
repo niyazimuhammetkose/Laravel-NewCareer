@@ -20,11 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c470b17a-aedd-408a-a250-3ffa00cd37e9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/NewCareer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/NewCareer.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/JobController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/JobController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/job.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/job.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/job_add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/job_add.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/job_edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/job_edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -203,7 +204,7 @@
       <workItem from="1609251062259" duration="35000" />
       <workItem from="1610455739459" duration="10561000" />
       <workItem from="1610628314277" duration="29276000" />
-      <workItem from="1610885502108" duration="15374000" />
+      <workItem from="1610885502108" duration="16653000" />
     </task>
     <servers />
   </component>

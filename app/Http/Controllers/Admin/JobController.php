@@ -8,6 +8,7 @@ use App\Models\Job;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class JobController extends Controller
 {
@@ -48,7 +49,7 @@ class JobController extends Controller
         $data->title= $request->input('title');
         $data->keywords= $request->input('keywords');
         $data->description= $request->input('description');
-        $data->image= $request->input('image');
+        $data->image= Storage::putFile('images', $request->file('image'));
         $data->category_id= $request->input('category_id');
         $data->detail= $request->input('detail');
         $data->tecrube= $request->input('tecrube');
@@ -108,7 +109,7 @@ class JobController extends Controller
         $data->title= $request->input('title');
         $data->keywords= $request->input('keywords');
         $data->description= $request->input('description');
-        $data->image= $request->input('image');
+        $data->image= Storage::putFile('images', $request->file('image'));
         $data->category_id= $request->input('category_id');
         $data->detail= $request->input('detail');
         $data->tecrube= $request->input('tecrube');

@@ -31,6 +31,7 @@
                                 <th>Title</th>
                                 <th>Category</th>
                                 <th>Company</th>
+                                <th>Image</th>
                                 <th>Status</th>
                                 <th colspan="2">Action</th>
                             </tr>
@@ -42,6 +43,11 @@
                                     <td>{{ $rs->title }}</td>
                                     <td>{{ $rs->category_id }}</td>
                                     <td>{{ $rs->firma_adi }}</td>
+                                    <td>
+                                        @if($rs->image)
+                                            <img src="{{ \Illuminate\Support\Facades\Storage::url($rs->image) }}" height="30" alt="">
+                                        @endif
+                                    </td>
                                     <td>{{ $rs->status }}</td>
                                     <td><a href="{{route('admin_jobs_edit', ['id'=>$rs->id])}}"><i class="fa fa-pencil-square-o"></i></a></td>
                                     <td><a href="{{route('admin_jobs_delete', ['id'=>$rs->id])}}" onclick="return confirm('İlan Silinecek! Emin misin?')"><i class="fa fa-trash-o"></i></a></td>
