@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="{{ asset('assets') }}/admin/assets/css/demo_1/style.css">
     <!-- End Layout styles -->
     <link rel="shortcut icon" href="{{ asset('assets') }}/admin/assets/images/favicon.ico" />
+    @yield('css')
+    @yield('javascript')
 </head>
 <body>
 <div class="container-scroller">
