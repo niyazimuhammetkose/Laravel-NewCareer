@@ -64,6 +64,10 @@ Route::middleware('auth')->prefix('admin')->group(function (){
         Route::get('show', [\App\Http\Controllers\Admin\JobController::class, 'show'])->name('admin_show');
     });
 
+    #Setting
+    Route::get('setting', [\App\Http\Controllers\Admin\SettingController::class, 'index'])->name('admin_setting');
+    Route::post('setting/update', [\App\Http\Controllers\Admin\SettingController::class, 'update'])->name('admin_setting_update');
+
 });
 
 Route::get('/admin/login', [HomeController::class, 'login'])->name('admin_login');
