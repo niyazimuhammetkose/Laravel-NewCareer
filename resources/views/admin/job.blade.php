@@ -41,7 +41,7 @@
                                 <tr>
                                     <td>{{ $rs->id }}</td>
                                     <td>{{ $rs->title }}</td>
-                                    <td>{{ $rs->category_id }}</td>
+                                    <td>{{ $rs->category->title }}</td>
                                     <td>{{ $rs->firma_adi }}</td>
                                     <td>
                                         @if($rs->image)

@@ -49,8 +49,8 @@ class JobController extends Controller
         $data->title= $request->input('title');
         $data->keywords= $request->input('keywords');
         $data->description= $request->input('description');
-        $data->image= Storage::putFile('images', $request->file('image'));
         $data->category_id= $request->input('category_id');
+        $data->image= Storage::putFile('images', $request->file('image'));
         $data->detail= $request->input('detail');
         $data->tecrube= $request->input('tecrube');
         $data->askerlik= $request->input('askerlik');
@@ -109,7 +109,6 @@ class JobController extends Controller
         $data->title= $request->input('title');
         $data->keywords= $request->input('keywords');
         $data->description= $request->input('description');
-        $data->image= Storage::putFile('images', $request->file('image'));
         $data->category_id= $request->input('category_id');
         $data->detail= $request->input('detail');
         $data->tecrube= $request->input('tecrube');
@@ -126,6 +125,9 @@ class JobController extends Controller
         $data->user_id= Auth::id();
         $data->status= $request->input('status');
         $data->slug= $request->input('slug');
+        if($request->file('image')!=null){
+            $data->image= Storage::putFile('images', $request->file('image'));
+        }
         $data->save();
         return redirect()->route('admin_jobs');
     }
