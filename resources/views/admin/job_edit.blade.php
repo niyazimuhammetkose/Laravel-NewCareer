@@ -20,14 +20,16 @@
             <div class="col-md-12 grid-margin">
                 <div class="card">
                     <div class="card-body">
-                        <form class="forms-sample" action="{{route('admin_jobs_update',['id'=>$data->id])}}"method="post" enctype="multipart/form-data">
+                        <form class="forms-sample" action="{{route('admin_jobs_update',['id'=>$data->id])}}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group row">
-                                <label class="col-sm-3 col-form-label">Parent</label>
+                                <label class="col-sm-3 col-form-label">Category</label>
                                 <div class="col-sm-9">
                                     <select class="form-control" name="category_id">
                                         @foreach( $datalist as $rs )
-                                            <option value="{{ $rs->id }}" @if ($rs->id == $data->category_id) selected="selected" @endif ">{{ $rs->title }}</option>
+                                            <option value="{{ $rs->id }}" @if ($rs->id == $data->category_id) selected="selected" @endif ">
+                                            {{ \App\Http\Controllers\Admin\CategoryController::getParentsTree($rs, $rs->title) }}
+                                            </option>
                                         @endforeach
                                     </select>
                                 </div>
