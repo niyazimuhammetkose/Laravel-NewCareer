@@ -10,7 +10,7 @@
 @endsection
 
 @section('title')
-    {{$setting->title}} | About Us
+    {{$setting->title}} | User Profile
 @endsection
 
 @section('content')
@@ -21,9 +21,21 @@
         <div class="container">
             <div class="row">
 
-                İçerik Alanı
+                <div class="col-lg-2 offset-1">
+                    @include('home.user_menu')
+                </div>
 
+                <div class="col-lg-9">
+
+                    <!-- Shop Content -->
+
+                    <div class="shop_content">
+                        @include('profile.show')
+                    </div>
+
+                </div>
             </div>
+
         </div>
     </div>
 

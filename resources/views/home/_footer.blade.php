@@ -42,9 +42,9 @@
                     @auth
                         <div class="footer_title">{{ Auth::user()->name }}</div>
                         <ul class="footer_list">
-                            <li><a href="/">Hesabım</a></li>
-                            <li><a href="/">Başvurularım</a></li>
-                            <li><a href="/">CV</a></li>
+                            <li><a href="{{ route('myprofile') }}">Hesabım</a></li>
+                            <li><a href="{{ route('home') }}">CV</a></li>
+                            <li><a href="{{ route('home') }}">Başvurularım</a></li>
                             <li><a href="/logout">Çıkış Yap</a></li>
                         </ul>
                     @endauth

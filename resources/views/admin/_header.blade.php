@@ -140,7 +140,7 @@
                     <a class="dropdown-item">Mesajlar<i class="dropdown-item-icon ti-comment-alt"></i></a>
                     <a class="dropdown-item">Aktiviteler<i class="dropdown-item-icon ti-location-arrow"></i></a>
                     <a class="dropdown-item">FAQ<i class="dropdown-item-icon ti-help-alt"></i></a>
-                    <a href="{{ route('admin_logout') }}" class="dropdown-item">Çıkış Yap<i class="dropdown-item-icon ti-power-off"></i></a>
+                    <a href="{{ route('logout') }}" class="dropdown-item">Çıkış Yap<i class="dropdown-item-icon ti-power-off"></i></a>
                 </div>
                 @endauth
             </li>

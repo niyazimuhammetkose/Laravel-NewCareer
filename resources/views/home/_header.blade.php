@@ -42,7 +42,7 @@
                                         <li>
                                             <strong >{{ Auth::user()->name }}</strong>
                                             <ul>
-                                                <li><a href="{{ route('home') }}">Hesabım</a></li>
+                                                <li><a href="{{ route('myprofile') }}">Hesabım</a></li>
                                                 <li><a href="{{ route('home') }}">CV</a></li>
                                                 <li><a href="{{ route('home') }}">Başvurularım</a></li>
                                                 <li><a href="/logout">Çıkış Yap</a></li>

@@ -24,15 +24,17 @@
 </head>
 
 <body>
-@include('home._header')
+<div class="super_container">
+    @include('home._header')
 
 
-@section('content')
-    İçerik Alanı
-@show
+    @section('content')
+        İçerik Alanı
+    @show
 
-@include('home._footer')
-@yield('footerjs')
+    @include('home._footer')
+    @yield('footerjs')
+</div>
 </body>
 
 </html>
