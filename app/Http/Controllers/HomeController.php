@@ -30,12 +30,12 @@ class HomeController extends Controller
 
     //
     public function references(){
-        return view('home.about');
+        return view('home.references');
     }
 
     //
     public function contact(){
-        return view('home.about');
+        return view('home.contact');
     }
 
 

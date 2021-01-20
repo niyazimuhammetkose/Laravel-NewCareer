@@ -10,7 +10,7 @@
 @endsection
 
 @section('title')
-    {{$setting->title}} | About Us
+    {{$setting->title}} | References
 @endsection
 
 @section('content')
@@ -22,7 +22,7 @@
             <div class="row">
 
                 <div class="col-8 offset-2">
-                    {!! $setting->aboutus !!}
+                    {!! $setting->references !!}
                 </div>
 
             </div>
