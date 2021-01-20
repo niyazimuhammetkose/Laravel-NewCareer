@@ -1,14 +1,16 @@
 @extends('layouts.home')
 
-@section('title', 'Laravel - New Career Site')
-
-@section('description')
-    Türkiye'nin en büyük ve en hızlı iş bulma platformu..
+@section('headerjs')
+    @php
+        $setting = \App\Http\Controllers\HomeController::getsetting();
+    @endphp
 @endsection
 
-@section('keywords')
-    Kariyer, İş, Staj, Şirket, Kurum,
-@endsection
+@section('title', $setting->title)
+
+@section('description', $setting->description)
+
+@section('keywords', $setting->keywords)
 
 @section('content')
     @include('home._content')

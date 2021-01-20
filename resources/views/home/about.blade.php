@@ -1,6 +1,14 @@
 @extends('layouts.home')
 
-@section('title', 'About Us')
+@section('headerjs')
+    @php
+        $setting = \App\Http\Controllers\HomeController::getsetting();
+    @endphp
+@endsection
+
+@section('title')
+    {{$setting->title}} | About Us
+@endsection
 
 @section('content')
     <div class="col-sm-12">

@@ -8,26 +8,53 @@
         <div class="container">
             <div class="row">
                 <div class="col d-flex flex-row">
-                    <div class="top_bar_contact_item"><div class="top_bar_icon"><img src="{{ asset('assets') }}/images/phone.png" alt=""></div>0541 667 07 58</div>
-                    <div class="top_bar_contact_item"><div class="top_bar_icon"><img src="{{ asset('assets') }}/images/mail.png" alt=""></div><a href="mailto:fastsales@gmail.com">niyazimuhammetkose@gmail.com</a></div>
+                    <div class="top_bar_contact_item">
+                        <div class="top_bar_icon">
+                            <img src="{{ asset('assets') }}/images/phone.png" alt="">
+                        </div>
+                        {{ $setting->phone }}
+                    </div>
+                    <div class="top_bar_contact_item">
+                        <div class="top_bar_icon">
+                            <img src="{{ asset('assets') }}/images/mail.png" alt="">
+                        </div>
+                        <a href="mailto:{{ $setting->email }}">{{ $setting->email }}</a>
+                    </div>
                     <div class="top_bar_content ml-auto">
                         <div class="top_bar_menu">
                             <ul class="standard_dropdown top_bar_dropdown">
                                 <li>
-                                    <a href="#">Türkçe<i class="fas fa-chevron-down"></i></a>
+                                    <a href="{{ route('home') }}">Türkçe<i class="fas fa-chevron-down"></i></a>
                                     <ul>
-                                        <li><a href="#">English</a></li>
-                                        <li><a href="#">Italian</a></li>
-                                        <li><a href="#">Spanish</a></li>
-                                        <li><a href="#">Japanese</a></li>
+                                        <li><a href="{{ route('home') }}">English</a></li>
+                                        <li><a href="{{ route('home') }}">Italian</a></li>
+                                        <li><a href="{{ route('home') }}">Spanish</a></li>
+                                        <li><a href="{{ route('home') }}">Japanese</a></li>
                                     </ul>
                                 </li>
                             </ul>
                         </div>
                         <div class="top_bar_user">
                             <div class="user_icon"><img src="{{ asset('assets') }}/images/user.svg" alt=""></div>
-                            <div><a href="#">Kayıt Ol</a></div>
-                            <div><a href="#">Giriş Yap</a></div>
+                            @auth
+                                <div class="top_bar_menu">
+                                    <ul class="standard_dropdown top_bar_dropdown">
+                                        <li>
+                                            <strong >{{ Auth::user()->name }}</strong>
+                                            <ul>
+                                                <li><a href="{{ route('home') }}">Hesabım</a></li>
+                                                <li><a href="{{ route('home') }}">CV</a></li>
+                                                <li><a href="{{ route('home') }}">Başvurularım</a></li>
+                                                <li><a href="/logout">Çıkış Yap</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            @endauth
+                            @guest
+                                <div><a href="/register">Kayıt Ol</a></div>
+                                <div><a href="/login">Giriş Yap</a></div>
+                            @endguest
                         </div>
                     </div>
                 </div>
@@ -44,7 +71,7 @@
                 <!-- Logo -->
                 <div class="col-lg-2 col-sm-3 col-3 order-1">
                     <div class="logo_container">
-                        <div class="logo"><a href="#">NewCareer</a></div>
+                        <div class="logo"><a href="{{route('home')}}">NewCareer</a></div>
                     </div>
                 </div>
 
@@ -57,8 +84,7 @@
                                     <input type="search" required="required" class="header_search_input" placeholder="Pozisyon, firma adı, sektör...">
                                     <div class="custom_dropdown">
                                         <div class="custom_dropdown_list">
-                                            <span class="custom_dropdown_placeholder clc">Şehir</span>
-                                            <i class="fas fa-chevron-down"></i>
+                                            <span class="custom_dropdown_placeholder clc">Şehir<i class="fas fa-chevron-down"></i></span>
                                             <ul class="custom_list clc">
                                                 <li><a class="clc" href="#">Tüm Şehirler</a></li>
                                                 <li><a class="clc" href="#">İstanbul</a></li>
@@ -92,10 +118,10 @@
 
                         <div class="main_nav_menu ml-auto">
                             <ul class="standard_dropdown main_nav_dropdown">
-                                <li><a href="#">Anasayfa<i class="fas fa-chevron-down"></i></a></li>
-                                <li><a href="">Hakkımızda<i class="fas fa-chevron-down"></i></a></li>
-                                <li><a href="">Referanslarımız<i class="fas fa-chevron-down"></i></a></li>
-                                <li><a href="">İletişim<i class="fas fa-chevron-down"></i></a></li>
+                                <li><a href="{{route('home')}}">Anasayfa</a></li>
+                                <li><a href="{{ route('aboutus') }}">Hakkımızda</a></li>
+                                <li><a href="{{ route('references') }}">Referanslarımız</a></li>
+                                <li><a href="{{ route('contact') }}">İletişim</a></li>
                             </ul>
                         </div>
 
