@@ -35,6 +35,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('homepage');
 Route::get('/aboutus', [HomeController::class, 'aboutus'])->name('aboutus');
 Route::get('/references', [HomeController::class, 'references'])->name('references');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+Route::post('/sendmessage', [HomeController::class, 'sendmessage'])->name('sendmessage');
 
 // where tipine göre sadece o tipin girilmesini sağlıyor.
 //Route::get('/test/{id}/{name}', [HomeController::class, 'test']) ->where(['id' =>'[0-9]+', 'name' =>'[A-Za-z]+']);
@@ -65,6 +66,15 @@ Route::middleware('auth')->prefix('admin')->group(function (){
         Route::post('update/{id}', [\App\Http\Controllers\Admin\JobController::class, 'update'])->name('admin_jobs_update');
         Route::get('delete/{id}', [\App\Http\Controllers\Admin\JobController::class, 'destroy'])->name('admin_jobs_delete');
         Route::get('show', [\App\Http\Controllers\Admin\JobController::class, 'show'])->name('admin_show');
+    });
+
+    #Message
+    Route::prefix('message')->group(function (){
+        Route::get('/', [\App\Http\Controllers\Admin\MessageController::class, 'index'])->name('admin_message');
+        Route::get('edit/{id}', [\App\Http\Controllers\Admin\MessageController::class, 'edit'])->name('admin_message_edit');
+        Route::post('update/{id}', [\App\Http\Controllers\Admin\MessageController::class, 'update'])->name('admin_message_update');
+        Route::get('delete/{id}', [\App\Http\Controllers\Admin\MessageController::class, 'destroy'])->name('admin_message_delete');
+        Route::get('show', [\App\Http\Controllers\Admin\MessageController::class, 'show'])->name('admin_show');
     });
 
     #Setting

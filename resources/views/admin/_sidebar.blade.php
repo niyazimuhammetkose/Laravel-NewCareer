@@ -33,6 +33,12 @@
             </a>
         </li>
         <li class="nav-item">
+            <a class="nav-link" href="{{ route('admin_message') }}">
+                <i class="menu-icon typcn typcn-document-text"></i>
+                <span class="menu-title">İletişim Mesajları</span>
+            </a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link" href="{{ route('admin_setting') }}">
                 <i class="menu-icon typcn typcn-document-text"></i>
                 <span class="menu-title">Site Ayarları</span>
