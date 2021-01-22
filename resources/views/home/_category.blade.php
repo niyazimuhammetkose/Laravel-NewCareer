@@ -9,7 +9,7 @@
     <ul>
         @foreach($parentCategories as $rs)
             <li>
-                <a href="#" aria-expanded="true">{{ $rs->title }}</a>
+                <a href="{{route('categoryjobs', ['id' => $rs->id, 'slug' => $rs->slug])}}" aria-expanded="true">{{ $rs->title }}</a>
                 <div>
                     <div>
                         @if(count($rs->children))

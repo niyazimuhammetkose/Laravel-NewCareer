@@ -23,10 +23,10 @@ class HomeController extends Controller
     //
     public function index(){
         $sliderdata = Job::select('id', 'title', 'image', 'firma_adi', 'slug')->limit(6)->get();
-        $data = [
+        $context = [
             'sliderdata'=>$sliderdata,
         ];
-        return view('home.index', $data);
+        return view('home.index', $context);
     }
 
     //
@@ -34,6 +34,17 @@ class HomeController extends Controller
         $data = Job::find($id);
         print_r($data);
         exit();
+    }
+
+    //
+    public function categoryjobs($id, $slug){
+        $datalist = Job::where('category_id', $id)->get();
+        $data = Category::find($id);
+        $context = [
+            'datalist'=>$datalist,
+            'data'=>$data,
+        ];
+        return view('home.category_jobs', $context);
     }
 
     //
