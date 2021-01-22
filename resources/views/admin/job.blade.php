@@ -45,7 +45,7 @@
                                     <td>{{ $rs->firma_adi }}</td>
                                     <td>
                                         @if($rs->image)
-                                            <img src="{{ \Illuminate\Support\Facades\Storage::url($rs->image) }}" height="30" alt="">
+                                            <img src="{{ \Illuminate\Support\Facades\Storage::url($rs->image) }}" height="30" alt="" class="img-sm profile-pic">
                                         @endif
                                     </td>
                                     <td>{{ $rs->status }}</td>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Job;
 use App\Models\Message;
 use App\Models\Setting;
 use Illuminate\Http\Request;
@@ -21,7 +22,18 @@ class HomeController extends Controller
 
     //
     public function index(){
-        return view('home.index');
+        $sliderdata = Job::select('id', 'title', 'image', 'firma_adi', 'slug')->limit(6)->get();
+        $data = [
+            'sliderdata'=>$sliderdata,
+        ];
+        return view('home.index', $data);
+    }
+
+    //
+    public function job($id, $slug){
+        $data = Job::find($id);
+        print_r($data);
+        exit();
     }
 
     //
