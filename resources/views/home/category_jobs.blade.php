@@ -88,41 +88,43 @@
                                 </ul>
                             </div>
                         </div>
+
                         <!-- Single Blog Post -->
 
-
                         <div class="single_post_text">
+
                             @foreach($datalist as $rs)
                                 <div class="single_post_quote text-center">
                                     <div class="quote_text"><h6>{{ $rs->firma_adi }}</h6></div>
                                     <div class="quote_name"><a href="{{route('job',['id' => $rs->id, 'slug' => $rs->slug])}}">{{ $rs->title }}</a></div>
                                     <div class="quote_image"><a>{{ $rs->sehir }}</a></div>
                                 </div>
+
                             @endforeach
                         </div>
+                    </div>
 
+                    <!-- Shop Page Navigation -->
 
-                        <!-- Shop Page Navigation -->
-
-                        <div class="shop_page_nav d-flex flex-row">
-                            <div class="page_prev d-flex flex-column align-items-center justify-content-center"><i class="fas fa-chevron-left"></i></div>
-                            <ul class="page_nav d-flex flex-row">
-                                <li><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">...</a></li>
-                                <li><a href="#">21</a></li>
-                            </ul>
-                            <div class="page_next d-flex flex-column align-items-center justify-content-center"><i class="fas fa-chevron-right"></i></div>
-                        </div>
-
+                    <div class="shop_page_nav d-flex flex-row">
+                        <div class="page_prev d-flex flex-column align-items-center justify-content-center"><i class="fas fa-chevron-left"></i></div>
+                        <ul class="page_nav d-flex flex-row">
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">...</a></li>
+                            <li><a href="#">21</a></li>
+                        </ul>
+                        <div class="page_next d-flex flex-column align-items-center justify-content-center"><i class="fas fa-chevron-right"></i></div>
                     </div>
 
                 </div>
 
-
             </div>
+
+
         </div>
+    </div>
     </div>
 
 @endsection
