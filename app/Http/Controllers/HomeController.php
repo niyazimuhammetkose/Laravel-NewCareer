@@ -34,8 +34,10 @@ class HomeController extends Controller
     //
     public function job($id, $slug){
         $data = Job::find($id);
-        print_r($data);
-        exit();
+        $context = [
+            'data'=>$data,
+        ];
+        return view('home.job_detail', $context);
     }
 
     //

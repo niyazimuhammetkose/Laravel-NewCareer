@@ -114,7 +114,7 @@ class JobController extends Controller
         $data->tecrube= $request->input('tecrube');
         $data->askerlik= $request->input('askerlik');
         $data->egitim= $request->input('egitim');
-        $data->bolum= $request->input('bolüm');
+        $data->bolum= $request->input('bolum');
         $data->yabanci_dil= $request->input('yabanci_dil');
         $data->firma_adi= $request->input('firma_adi');
         $data->sektor= $request->input('sektor');
