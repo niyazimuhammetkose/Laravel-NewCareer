@@ -80,8 +80,10 @@
                     <div class="header_search">
                         <div class="header_search_content">
                             <div class="header_search_form_container">
-                                <form action="#" class="header_search_form clearfix">
-                                    <input type="search" required="required" class="header_search_input" placeholder="Pozisyon, firma adı, sektör...">
+                                <form action="{{ route('getjobs') }}" class="header_search_form clearfix" method="post">
+                                    @csrf
+                                    @livewire('search')
+
                                     <div class="custom_dropdown">
                                         <div class="custom_dropdown_list">
                                             <span class="custom_dropdown_placeholder clc">Şehir<i class="fas fa-chevron-down"></i></span>
@@ -94,8 +96,9 @@
                                             </ul>
                                         </div>
                                     </div>
-                                    <button type="submit" class="header_search_button trans_300" value="Submit"><img src="{{ asset('assets') }}/images/search.png" alt=""></button>
+                                    <button type="submit" class="header_search_button trans_300"><img src="{{ asset('assets') }}/images/search.png" alt=""></button>
                                 </form>
+                                @livewireScripts
                             </div>
                         </div>
                     </div>

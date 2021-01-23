@@ -41,6 +41,25 @@ class HomeController extends Controller
     }
 
     //
+    public function getjobs(Request $request){
+        $search = $request->input('search');
+        $count = Job::where('title', 'like', '%'.$search.'%')->get()->count();
+        if($count == 1){
+            $data = Job::where('title', 'like', '%'.$search.'%')->first();
+            return redirect()->route('job', ['id' => $data->id, 'slug' => $data->slug]);
+        }
+        else{
+            return redirect()->route('joblist', ['search' => $search, 'count' => $count]);
+        }
+    }
+
+    //
+    public function joblist($search, $count){
+        $datalist = Job::where('title', 'like', '%'.$search.'%')->get();
+        return view('home.search_jobs', ['search' => $search, 'datalist' => $datalist, 'count' => $count]);
+    }
+
+    //
     public function jobapplication($id){
         echo "Job Application <br>";
         $data = Job::find($id);
@@ -52,9 +71,11 @@ class HomeController extends Controller
     public function categoryjobs($id, $slug){
         $datalist = Job::where('category_id', $id)->get();
         $data = Category::find($id);
+        $count = Job::where('category_id', $id)->get()->count();
         $context = [
             'datalist'=>$datalist,
             'data'=>$data,
+            'count' => $count,
         ];
         return view('home.category_jobs', $context);
     }

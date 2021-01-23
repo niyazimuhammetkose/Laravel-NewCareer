@@ -11,7 +11,7 @@
 @endsection
 
 @section('title')
-    {{$setting->title}} | {{$data->title}}
+    {{$setting->title}} | {{$search}}
 @endsection
 
 @section('content')

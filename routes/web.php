@@ -39,6 +39,8 @@ Route::post('/sendmessage', [HomeController::class, 'sendmessage'])->name('sendm
 Route::get('/job/{id}/{slug}', [HomeController::class, 'job'])->name('job');
 Route::get('/categoryjobs/{id}/{slug}', [HomeController::class, 'categoryjobs'])->name('categoryjobs');
 Route::get('/jobapplication/{id}', [HomeController::class, 'jobapplication'])->name('jobapplication');
+Route::post('/getjobs', [HomeController::class, 'getjobs'])->name('getjobs');
+Route::get('/joblist/{search}/{count}', [HomeController::class, 'joblist'])->name('joblist');
 
 // where tipine göre sadece o tipin girilmesini sağlıyor.
 //Route::get('/test/{id}/{name}', [HomeController::class, 'test']) ->where(['id' =>'[0-9]+', 'name' =>'[A-Za-z]+']);
