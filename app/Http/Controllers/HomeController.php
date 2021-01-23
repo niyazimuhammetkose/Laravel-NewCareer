@@ -22,15 +22,25 @@ class HomeController extends Controller
 
     //
     public function index(){
-        $sliderdata = Job::select('id', 'title', 'image', 'firma_adi', 'slug')->limit(6)->get();
+        $sliderdata = Job::select('id', 'title', 'image', 'firma_adi', 'slug')->limit(6)->orderByDesc('id')->get();
+        $picked = Job::select('id', 'title', 'image', 'firma_adi', 'slug')->limit(6)->inRandomOrder()->get();
         $context = [
             'sliderdata'=>$sliderdata,
+            'picked'=>$picked,
         ];
         return view('home.index', $context);
     }
 
     //
     public function job($id, $slug){
+        $data = Job::find($id);
+        print_r($data);
+        exit();
+    }
+
+    //
+    public function jobapplication($id){
+        echo "Job Application <br>";
         $data = Job::find($id);
         print_r($data);
         exit();

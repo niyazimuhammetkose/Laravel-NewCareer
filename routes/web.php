@@ -38,6 +38,7 @@ Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::post('/sendmessage', [HomeController::class, 'sendmessage'])->name('sendmessage');
 Route::get('/job/{id}/{slug}', [HomeController::class, 'job'])->name('job');
 Route::get('/categoryjobs/{id}/{slug}', [HomeController::class, 'categoryjobs'])->name('categoryjobs');
+Route::get('/jobapplication/{id}', [HomeController::class, 'jobapplication'])->name('jobapplication');
 
 // where tipine göre sadece o tipin girilmesini sağlıyor.
 //Route::get('/test/{id}/{name}', [HomeController::class, 'test']) ->where(['id' =>'[0-9]+', 'name' =>'[A-Za-z]+']);
