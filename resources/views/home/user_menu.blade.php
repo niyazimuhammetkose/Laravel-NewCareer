@@ -4,7 +4,7 @@
         <div class="sidebar_title">Hesabım</div>
         <hr>
         <ul class="sidebar_categories">
-            <li><a href="#">CV</a></li>
+            <li><a href="{{ route('user_cv') }}">Özgeçmişlerim</a></li>
             <li><a href="#">Başvurularım</a></li>
             <li><a href="{{ route('user_jobs') }}">Paylaştığım İlanlarım</a></li>
             <li><a href="#">Yorumlarım</a></li>

@@ -58,4 +58,9 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    # One To Many (User->>>CV)
+    public function cv(){
+        return $this->hasMany(Cv::class);
+    }
 }
