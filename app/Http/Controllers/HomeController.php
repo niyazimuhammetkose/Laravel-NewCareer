@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Faq;
 use App\Models\Job;
 use App\Models\Message;
 use App\Models\Setting;
@@ -93,6 +94,12 @@ class HomeController extends Controller
     //
     public function contact(){
         return view('home.contact');
+    }
+
+    //
+    public function faq(){
+        $datalist = Faq::all()->sortBy('position');
+        return view('home.faq', ['datalist' => $datalist]);
     }
 
     //

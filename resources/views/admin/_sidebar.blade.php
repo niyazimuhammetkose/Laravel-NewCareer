@@ -39,6 +39,12 @@
             </a>
         </li>
         <li class="nav-item">
+            <a class="nav-link" href="{{ route('admin_faq') }}">
+                <i class="menu-icon typcn typcn-document-text"></i>
+                <span class="menu-title">Sıkça Sorulan Sorular</span>
+            </a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link" href="{{ route('admin_setting') }}">
                 <i class="menu-icon typcn typcn-document-text"></i>
                 <span class="menu-title">Site Ayarları</span>

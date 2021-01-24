@@ -125,6 +125,7 @@
                                 <li><a href="{{ route('aboutus') }}">Hakkımızda</a></li>
                                 <li><a href="{{ route('references') }}">Referanslarımız</a></li>
                                 <li><a href="{{ route('contact') }}">İletişim</a></li>
+                                <li><a href="{{ route('faq') }}">SSS</a></li>
                             </ul>
                         </div>
 
