@@ -133,6 +133,11 @@ Route::middleware('auth')->prefix('user')->namespace('user')->group(function (){
         Route::get('show', [CvController::class, 'show'])->name('user_cv_show');
     });
 
+    #Job Application
+    Route::prefix('app')->group(function (){
+        Route::post('/', [HomeController::class, 'index'])->name('user_job_app');
+    });
+
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

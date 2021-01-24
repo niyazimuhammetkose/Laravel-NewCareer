@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Cv;
 use App\Models\Faq;
 use App\Models\Job;
 use App\Models\Message;
@@ -62,10 +63,13 @@ class HomeController extends Controller
 
     //
     public function jobapplication($id){
-        echo "Job Application <br>";
         $data = Job::find($id);
-        print_r($data);
-        exit();
+        $datalist = Cv::where('user_id', Auth::id())->get();
+        $context = [
+            'data'=>$data,
+            'datalist'=>$datalist,
+        ];
+        return view('home.job_application', $context);
     }
 
     //
