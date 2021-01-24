@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\JobController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -71,7 +72,7 @@ Route::middleware('auth')->prefix('admin')->group(function (){
         Route::get('edit/{id}', [\App\Http\Controllers\Admin\JobController::class, 'edit'])->name('admin_jobs_edit');
         Route::post('update/{id}', [\App\Http\Controllers\Admin\JobController::class, 'update'])->name('admin_jobs_update');
         Route::get('delete/{id}', [\App\Http\Controllers\Admin\JobController::class, 'destroy'])->name('admin_jobs_delete');
-        Route::get('show', [\App\Http\Controllers\Admin\JobController::class, 'show'])->name('admin_show');
+        Route::get('show', [\App\Http\Controllers\Admin\JobController::class, 'show'])->name('admin_job_show');
     });
 
     #Message
@@ -80,7 +81,7 @@ Route::middleware('auth')->prefix('admin')->group(function (){
         Route::get('edit/{id}', [\App\Http\Controllers\Admin\MessageController::class, 'edit'])->name('admin_message_edit');
         Route::post('update/{id}', [\App\Http\Controllers\Admin\MessageController::class, 'update'])->name('admin_message_update');
         Route::get('delete/{id}', [\App\Http\Controllers\Admin\MessageController::class, 'destroy'])->name('admin_message_delete');
-        Route::get('show', [\App\Http\Controllers\Admin\MessageController::class, 'show'])->name('admin_show');
+        Route::get('show', [\App\Http\Controllers\Admin\MessageController::class, 'show'])->name('admin_message_show');
     });
 
     #Setting
@@ -95,7 +96,7 @@ Route::middleware('auth')->prefix('admin')->group(function (){
         Route::get('edit/{id}', [\App\Http\Controllers\Admin\FaqController::class, 'edit'])->name('admin_faq_edit');
         Route::post('update/{id}', [\App\Http\Controllers\Admin\FaqController::class, 'update'])->name('admin_faq_update');
         Route::get('delete/{id}', [\App\Http\Controllers\Admin\FaqController::class, 'destroy'])->name('admin_faq_delete');
-        Route::get('show', [\App\Http\Controllers\Admin\FaqController::class, 'show'])->name('admin_show');
+        Route::get('show', [\App\Http\Controllers\Admin\FaqController::class, 'show'])->name('admin_faq_show');
     });
 
 });
@@ -107,13 +108,24 @@ Route::get('/logout', [\App\Http\Controllers\Admin\HomeController::class, 'logou
 //User
 Route::middleware('auth')->prefix('myaccount')->namespace('myaccount')->group(function (){
 
-    Route::get('/', [\App\Http\Controllers\UserController::class, 'index'])->name('myprofile');
+    Route::get('/profile', [\App\Http\Controllers\UserController::class, 'index'])->name('myprofile');
 
 });
 
 Route::middleware('auth')->prefix('user')->namespace('user')->group(function (){
 
     Route::get('/profile', [\App\Http\Controllers\UserController::class, 'index'])->name('userprofile');
+
+    #Job
+    Route::prefix('job')->group(function (){
+        Route::get('/', [JobController::class, 'index'])->name('user_jobs');
+        Route::get('create', [JobController::class, 'create'])->name('user_jobs_add');
+        Route::post('store', [JobController::class, 'store'])->name('user_jobs_store');
+        Route::get('edit/{id}', [JobController::class, 'edit'])->name('user_jobs_edit');
+        Route::post('update/{id}', [JobController::class, 'update'])->name('user_jobs_update');
+        Route::get('delete/{id}', [JobController::class, 'destroy'])->name('user_jobs_delete');
+        Route::get('show', [JobController::class, 'show'])->name('user_jobs_show');
+    });
 
 });
 
