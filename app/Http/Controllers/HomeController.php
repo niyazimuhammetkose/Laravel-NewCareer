@@ -3,13 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
-use App\Models\Cv;
 use App\Models\Faq;
 use App\Models\Job;
 use App\Models\Message;
 use App\Models\Setting;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -59,17 +57,6 @@ class HomeController extends Controller
     public function joblist($search, $count){
         $datalist = Job::where('title', 'like', '%'.$search.'%')->get();
         return view('home.search_jobs', ['search' => $search, 'datalist' => $datalist, 'count' => $count]);
-    }
-
-    //
-    public function jobapplication($id){
-        $data = Job::find($id);
-        $datalist = Cv::where('user_id', Auth::id())->get();
-        $context = [
-            'data'=>$data,
-            'datalist'=>$datalist,
-        ];
-        return view('home.job_application', $context);
     }
 
     //

@@ -63,4 +63,9 @@ class User extends Authenticatable
     public function cv(){
         return $this->hasMany(Cv::class);
     }
+
+    # One To Many (User->>>App)
+    public function app(){
+        return $this->hasMany(Application::class);
+    }
 }

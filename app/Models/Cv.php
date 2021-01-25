@@ -13,4 +13,9 @@ class Cv extends Model
     public function user(){
         return $this->belongsTo(User::class);
     }
+
+    # One To Many (Inverse CV->App)
+    public function app(){
+        return $this->belongsTo(Application::class);
+    }
 }

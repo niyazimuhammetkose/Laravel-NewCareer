@@ -166,7 +166,7 @@
                     <!-- Başvuru Buton -->
                     <div class="contact_form_button">
                         <button type="submit" class="button contact_submit_button">
-                            <a href="{{route('jobapplication', ['id' => $data->id])}}">Başvuru Yap</a>
+                            <a href="{{route('user_app', ['id' => $data->id])}}">Başvuru Yap</a>
                         </button>
                     </div>
 

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\CvController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JobController;
@@ -41,7 +42,6 @@ Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::post('/sendmessage', [HomeController::class, 'sendmessage'])->name('sendmessage');
 Route::get('/job/{id}/{slug}', [HomeController::class, 'job'])->name('job');
 Route::get('/categoryjobs/{id}/{slug}', [HomeController::class, 'categoryjobs'])->name('categoryjobs');
-Route::get('/jobapplication/{id}', [HomeController::class, 'jobapplication'])->name('jobapplication');
 Route::post('/getjobs', [HomeController::class, 'getjobs'])->name('getjobs');
 Route::get('/joblist/{search}/{count}', [HomeController::class, 'joblist'])->name('joblist');
 
@@ -135,7 +135,10 @@ Route::middleware('auth')->prefix('user')->namespace('user')->group(function (){
 
     #Job Application
     Route::prefix('app')->group(function (){
-        Route::post('/', [HomeController::class, 'index'])->name('user_job_app');
+        Route::get('/', [ApplicationController::class, 'index'])->name('user_apps');
+        Route::get('create/{id}', [ApplicationController::class, 'create'])->name('user_app');
+        Route::post('store/{id}', [ApplicationController::class, 'store'])->name('user_app_store');
+        Route::get('show/{id}', [ApplicationController::class, 'show'])->name('user_app_show');
     });
 
 });

@@ -27,6 +27,8 @@
 
                 <div class="col-lg-8 offset-lg-2">
 
+                    @include('home.message')
+
                     <div class="single_post_text">
                         <div class="single_post_quote text-center">
                             <div class="quote_text"><h6>{{ $data->firma_adi }}</h6></div>
@@ -47,12 +49,12 @@
 
                     <div class="single_post_text">
                         <div class="single_post_quote text-center">
-                            <form class="form-sample" action="{{route('user_job_app')}}" method="post" enctype="multipart/form-data">
+                            <form class="form-sample" action="{{route('user_app_store', ['id' => $data->id])}}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label"><a class="quote_name">Özgeçmiş Seçiniz</a></label>
                                     <div class="col-sm-9">
-                                        <select class="form-control" name="category_id">
+                                        <select class="form-control" name="cv_id">
                                             @foreach( $datalist as $rs )
                                                 <option value="{{ $rs->id }}">{{ $rs->created_at }}</option>
                                             @endforeach
