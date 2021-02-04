@@ -2,10 +2,12 @@
     <ul class="nav">
         <li class="nav-item nav-profile">
             @auth
-                <a href="#" class="nav-link">
+                <a href="{{route('admin_user_show',['id'=>Auth::user()->id])}}" onclick="return !window.open(this.href, '', 'top=50 left=100 width=800 height=600')" class="nav-link">
                     <div class="profile-image">
-                        <img class="img-xs rounded-circle" src="{{ asset('assets') }}/admin/assets/images/faces/face8.jpg" alt="profile image">
-                        <div class="dot-indicator bg-success"></div>
+                        @if(Auth::user()->profile_photo_path)
+                            <img class="img-xs rounded-circle" src="{{ \Illuminate\Support\Facades\Storage::url(Auth::user()->profile_photo_path) }}" alt="profile image">
+                            <div class="dot-indicator bg-success"></div>
+                        @endif
                     </div>
                     <div class="text-wrapper">
                         <p class="profile-name">{{ Auth::user()->name }}</p>
@@ -13,6 +15,13 @@
                     </div>
                 </a>
             @endauth
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('admin_users') }}">
+                <i class="menu-icon typcn typcn-document-text"></i>
+                <span class="menu-title">Kullanıcılar</span>
+            </a>
         </li>
 
         <li class="nav-item">

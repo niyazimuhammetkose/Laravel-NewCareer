@@ -128,20 +128,24 @@
             </li>
             <li class="nav-item dropdown d-none d-xl-inline-block user-dropdown">
                 @auth
-                <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-                    <img class="img-xs rounded-circle" src="{{ asset('assets') }}/admin/assets/images/faces/face8.jpg" alt="Profile image"> </a>
-                <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
-                    <div class="dropdown-header text-center">
-                        <img class="img-md rounded-circle" src="{{ asset('assets') }}/admin/assets/images/faces/face8.jpg" alt="Profile image">
-                        <p class="mb-1 mt-3 font-weight-semibold">{{ Auth::user()->name }}</p>
-                        <p class="font-weight-light text-muted mb-0">{{ Auth::user()->email }}</p>
+                    <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
+                        @if(Auth::user()->profile_photo_path)
+                            <img class="img-xs rounded-circle" src="{{ \Illuminate\Support\Facades\Storage::url(Auth::user()->profile_photo_path) }}" alt="profile image">
+                        @endif
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
+                        <div class="dropdown-header text-center">
+                            @if(Auth::user()->profile_photo_path)
+                                <img class="img-xs rounded-circle" src="{{ \Illuminate\Support\Facades\Storage::url(Auth::user()->profile_photo_path) }}" alt="profile image">
+                            @endif                            <p class="mb-1 mt-3 font-weight-semibold">{{ Auth::user()->name }}</p>
+                            <p class="font-weight-light text-muted mb-0">{{ Auth::user()->email }}</p>
+                        </div>
+                        <a class="dropdown-item">Profilim <span class="badge badge-pill badge-danger">1</span><i class="dropdown-item-icon ti-dashboard"></i></a>
+                        <a class="dropdown-item">Mesajlar<i class="dropdown-item-icon ti-comment-alt"></i></a>
+                        <a class="dropdown-item">Aktiviteler<i class="dropdown-item-icon ti-location-arrow"></i></a>
+                        <a class="dropdown-item">FAQ<i class="dropdown-item-icon ti-help-alt"></i></a>
+                        <a href="{{ route('logout') }}" class="dropdown-item">Çıkış Yap<i class="dropdown-item-icon ti-power-off"></i></a>
                     </div>
-                    <a class="dropdown-item">Profilim <span class="badge badge-pill badge-danger">1</span><i class="dropdown-item-icon ti-dashboard"></i></a>
-                    <a class="dropdown-item">Mesajlar<i class="dropdown-item-icon ti-comment-alt"></i></a>
-                    <a class="dropdown-item">Aktiviteler<i class="dropdown-item-icon ti-location-arrow"></i></a>
-                    <a class="dropdown-item">FAQ<i class="dropdown-item-icon ti-help-alt"></i></a>
-                    <a href="{{ route('logout') }}" class="dropdown-item">Çıkış Yap<i class="dropdown-item-icon ti-power-off"></i></a>
-                </div>
                 @endauth
             </li>
         </ul>
