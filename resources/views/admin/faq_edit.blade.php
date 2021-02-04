@@ -31,13 +31,9 @@
                             <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">Answer</label>
                                 <div class="col-sm-9">
-                                    <textarea id="summernote" name="answer" >{{ $data->answer }}</textarea>
+                                    <textarea id="answer" name="answer" >{{ $data->answer }}</textarea>
                                     <script>
-                                        $('#summernote').summernote({
-                                            placeholder: 'Hello Bootstrap 4',
-                                            tabsize: 2,
-                                            height: 100
-                                        });
+                                        CKEDITOR.replace( 'answer' );
                                     </script>
                                 </div>
                             </div>

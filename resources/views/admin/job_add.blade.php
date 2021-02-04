@@ -59,13 +59,9 @@
                             <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">Detail</label>
                                 <div class="col-sm-9">
-                                    <textarea id="summernote" name="detail"></textarea>
+                                    <textarea id="detail" name="detail"></textarea>
                                     <script>
-                                        $('#summernote').summernote({
-                                            placeholder: 'Hello Bootstrap 4',
-                                            tabsize: 2,
-                                            height: 100
-                                        });
+                                        CKEDITOR.replace( 'detail' );
                                     </script>
                                 </div>
                             </div>

@@ -9,7 +9,7 @@
     <meta name="keywords" content=" @yield('keywords') ">
     <meta name="author" content="Alex de Souza">
 
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets') }}/styles/bootstrap4/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="{{ asset('assets') }}/plugins/fontawesome-free-5.0.1/css/fontawesome-all.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets') }}/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets') }}/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
@@ -17,6 +17,8 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets') }}/plugins/slick-1.8.0/slick.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets') }}/styles/main_styles.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets') }}/styles/responsive.css">
+
+    <script src="https://cdn.ckeditor.com/4.15.1/standard/ckeditor.js"></script>
 
     @yield('css')
     @yield('headerjs')

@@ -77,14 +77,13 @@
                 </div>
 
                 <!-- Search -->
-                <div class="col-lg-6 col-12 order-lg-2 order-3 text-lg-left text-right">
+                <div class="col-lg-6 order-lg-2 order-3 text-lg-left text-right offset-1">
                     <div class="header_search">
                         <div class="header_search_content">
                             <div class="header_search_form_container">
                                 <form action="{{ route('getjobs') }}" class="header_search_form clearfix" method="post">
                                     @csrf
                                     @livewire('search')
-
                                     <div class="custom_dropdown">
                                         <div class="custom_dropdown_list">
                                             <span class="custom_dropdown_placeholder clc">Şehir<i class="fas fa-chevron-down"></i></span>

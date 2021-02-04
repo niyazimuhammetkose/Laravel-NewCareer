@@ -123,12 +123,18 @@
                                 <label class="col-sm-3 col-form-label">About Us</label>
                                 <div class="col-sm-9">
                                     <textarea id="aboutus" name="aboutus" >{{ $data->aboutus }}</textarea>
+                                    <script>
+                                        CKEDITOR.replace( 'aboutus' );
+                                    </script>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">Contact</label>
                                 <div class="col-sm-9">
                                     <textarea id="contact" name="contact" >{{ $data->contact }}</textarea>
+                                    <script>
+                                        CKEDITOR.replace( 'contact' );
+                                    </script>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -136,21 +142,7 @@
                                 <div class="col-sm-9">
                                     <textarea id="references" name="references" >{{ $data->references }}</textarea>
                                     <script>
-                                        $('#aboutus').summernote({
-                                            placeholder: 'Hello Bootstrap 4',
-                                            tabsize: 2,
-                                            height: 100
-                                        });
-                                        $('#contact').summernote({
-                                            placeholder: 'Hello Bootstrap 4',
-                                            tabsize: 2,
-                                            height: 100
-                                        });
-                                        $('#references').summernote({
-                                            placeholder: 'Hello Bootstrap 4',
-                                            tabsize: 2,
-                                            height: 100
-                                        });
+                                        CKEDITOR.replace( 'references' );
                                     </script>
                                 </div>
                             </div>

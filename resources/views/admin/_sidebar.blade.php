@@ -12,11 +12,6 @@
                         <p class="designation">Admin</p>
                     </div>
                 </a>
-                <a href="{{ route('logout') }}" class="nav-link">
-                    <div class="text-wrapper">
-                        <p class="designation">Çıkış Yap</p>
-                    </div>
-                </a>
             @endauth
         </li>
 

@@ -26,6 +26,7 @@
             <div class="row w-100">
                 <div class="col-lg-4 mx-auto">
                     <div class="auto-form-wrapper">
+                        @include('home.message')
                         <form action="{{ route('admin_logincheck') }}" method="post">
                             @csrf
                             <div class="form-group">

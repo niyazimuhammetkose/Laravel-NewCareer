@@ -52,7 +52,7 @@ Route::get('/test/{id}/{name}', [HomeController::class, 'test']) ->whereNumber('
 
 
 //Admin
-Route::middleware('auth')->prefix('admin')->group(function (){
+Route::middleware('admin')->prefix('admin')->group(function (){
 
     Route::get('/', [\App\Http\Controllers\Admin\HomeController::class, 'index'])->name('admin_home');
 
@@ -99,7 +99,6 @@ Route::middleware('auth')->prefix('admin')->group(function (){
         Route::get('delete/{id}', [\App\Http\Controllers\Admin\FaqController::class, 'destroy'])->name('admin_faq_delete');
         Route::get('show', [\App\Http\Controllers\Admin\FaqController::class, 'show'])->name('admin_faq_show');
     });
-
 });
 
 Route::get('admin/login', [\App\Http\Controllers\Admin\HomeController::class, 'login'])->name('admin_login');
