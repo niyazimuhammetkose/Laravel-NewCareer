@@ -144,7 +144,7 @@
                             <div class="card-body">
                                 <form class="forms-sample">
                                     <div class="row">
-                                        <strong>Firma adı:</strong>
+                                        <strong>Firma sektörü:</strong>
                                         {{ $data->sektor }}
                                     </div>
                                     <div class="row">

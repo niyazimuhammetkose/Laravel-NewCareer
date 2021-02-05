@@ -44,6 +44,9 @@ Route::get('/job/{id}/{slug}', [HomeController::class, 'job'])->name('job');
 Route::get('/categoryjobs/{id}/{slug}', [HomeController::class, 'categoryjobs'])->name('categoryjobs');
 Route::post('/getjobs', [HomeController::class, 'getjobs'])->name('getjobs');
 Route::get('/joblist/{search}/{count}', [HomeController::class, 'joblist'])->name('joblist');
+Route::get('/pozisyon/{pozisyon}', [HomeController::class, 'pozisyon'])->name('pozisyon');
+Route::get('/parttime', [HomeController::class, 'parttime'])->name('parttime');
+Route::get('/bugunyayinlanan', [HomeController::class, 'bugunyayinlanan'])->name('bugunyayinlanan');
 
 // where tipine göre sadece o tipin girilmesini sağlıyor.
 //Route::get('/test/{id}/{name}', [HomeController::class, 'test']) ->where(['id' =>'[0-9]+', 'name' =>'[A-Za-z]+']);
@@ -113,6 +116,25 @@ Route::middleware('admin')->prefix('admin')->group(function (){
         Route::get('userrole/{id}', [\App\Http\Controllers\Admin\UserController::class, 'user_roles'])->name('admin_user_roles');
         Route::post('userroleadd/{id}', [\App\Http\Controllers\Admin\UserController::class, 'user_role_add'])->name('admin_user_role_add');
         Route::get('userroledelete/{userid}/{roleid}', [\App\Http\Controllers\Admin\UserController::class, 'user_role_delete'])->name('admin_user_role_delete');
+    });
+
+    #CV
+    Route::prefix('cv')->group(function (){
+        Route::get('/', [\App\Http\Controllers\Admin\CvController::class, 'index'])->name('admin_cv');
+        Route::get('create', [\App\Http\Controllers\Admin\CvController::class, 'create'])->name('admin_cv_add');
+        Route::post('store', [\App\Http\Controllers\Admin\CvController::class, 'store'])->name('admin_cv_store');
+        Route::get('edit/{id}', [\App\Http\Controllers\Admin\CvController::class, 'edit'])->name('admin_cv_edit');
+        Route::post('update/{id}', [\App\Http\Controllers\Admin\CvController::class, 'update'])->name('admin_cv_update');
+        Route::get('delete/{id}', [\App\Http\Controllers\Admin\CvController::class, 'destroy'])->name('admin_cv_delete');
+        Route::get('show/{id}', [\App\Http\Controllers\Admin\CvController::class, 'show'])->name('admin_cv_show');
+    });
+
+    #Job Application
+    Route::prefix('app')->group(function (){
+        Route::get('/', [\App\Http\Controllers\Admin\ApplicationController::class, 'index'])->name('admin_app');
+        Route::post('update/{id}', [\App\Http\Controllers\Admin\ApplicationController::class, 'update'])->name('admin_app_update');
+        Route::get('delete/{id}', [\App\Http\Controllers\Admin\ApplicationController::class, 'destroy'])->name('admin_app_delete');
+        Route::get('show/{id}', [\App\Http\Controllers\Admin\ApplicationController::class, 'show'])->name('admin_app_show');
     });
 });
 

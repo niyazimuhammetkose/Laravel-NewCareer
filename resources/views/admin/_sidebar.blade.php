@@ -25,16 +25,39 @@
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="{{ route('admin_category') }}">
-                <i class="menu-icon typcn typcn-document-text"></i>
-                <span class="menu-title">Kategoriler</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{{ route('admin_jobs') }}">
-                <i class="menu-icon typcn typcn-document-text"></i>
+            <a class="nav-link" data-toggle="collapse" href="#ilanlar" aria-expanded="false" aria-controls="ilanlar">
+                <i class="menu-icon typcn typcn-coffee"></i>
                 <span class="menu-title">İş İlanları</span>
+                <i class="menu-arrow"></i>
             </a>
+            <div class="collapse" id="ilanlar">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('admin_category') }}">Kategoriler</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('admin_jobs') }}">İlanlar</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#basvurular" aria-expanded="false" aria-controls="basvurular">
+                <i class="menu-icon typcn typcn-coffee"></i>
+                <span class="menu-title">İş Başvuruları</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="basvurular">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('admin_app') }}">Başvurular</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('admin_cv') }}">Özgeçmişler</a>
+                    </li>
+                </ul>
+            </div>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{ route('admin_message') }}">

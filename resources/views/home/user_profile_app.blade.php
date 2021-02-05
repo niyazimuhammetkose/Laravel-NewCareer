@@ -52,11 +52,11 @@
                                             @foreach( $datalist as $rs )
                                                 <tr>
                                                     <td>{{ $rs->id }}</td>
-                                                    <td>{{ $rs->job->title}}</td>
-                                                    <td>{{ $rs->cv->created_at }}</td>
+                                                    <td><a href="{{ route('job', ['id' => $rs->job_id, 'slug' => $rs->job->slug]) }}">{{ $rs->job->title }}</a></td>
+                                                    <td><a href="{{ route('user_cv_edit', ['id' => $rs->cv_id]) }}">{{ $rs->cv->created_at }}</a></td>
                                                     <td>{{ $rs->status }}</td>
                                                     <td>{{ $rs->note }}</td>
-                                                    <td><a href="{{route('user_app_show', ['id'=>$rs->id])}}"><i class="fa fa-pencil-square-o"></i></a></td>
+                                                    <td><a href="{{route('user_app_show', ['id'=>$rs->id])}}" ><i class="fa fa-pencil-square-o"></i></a></td>
                                                 </tr>
                                             @endforeach
                                             </tbody>

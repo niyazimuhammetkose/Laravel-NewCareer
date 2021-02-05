@@ -18,4 +18,9 @@ class Job extends Model
     public function app(){
         return $this->hasMany(Application::class);
     }
+
+    # One To Many (Inverse)
+    public function sektor(){
+        return $this->belongsTo(Sektor::class);
+    }
 }

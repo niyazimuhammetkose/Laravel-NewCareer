@@ -1,3 +1,133 @@
+<!-- Bana Uygun İlanlar -->
+
+<div class="trends">
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-4 advert_col">
+
+                <!-- Advert Item -->
+
+                <div class="advert d-flex flex-row align-items-center justify-content-start">
+                    @auth
+                        <div class="advert_content">
+                            <div class="advert_title"><a href="">BANA UYGUN İLANLAR</a></div>
+                            <div class="trends_text">{{ Auth::user()->name }}</div>
+                        </div>
+                        <div class="ml-auto">
+                            <div class="advert_image">
+                                <img src="{{ Auth::user()->profile_photo_url }}" alt="">
+                            </div>
+                        </div>
+                    @endauth
+                    @guest
+                        <div class="advert_content">
+                            <div class="advert_title"><a href="">BANA UYGUN İLANLAR</a></div>
+                        </div>
+                        <div class="ml-auto">
+                            <div class="advert_image">
+                                <img src="{{ asset('assets') }}/images/adv_3.png" alt="">
+                            </div>
+                        </div>
+                    @endguest
+                </div>
+            </div>
+
+            <div class="col-lg-4 advert_col">
+
+                <!-- Advert Item -->
+
+                <div class="advert d-flex flex-row align-items-center justify-content-start">
+                    <div class="advert_content">
+                        <div class="advert_title"><a href="{{route('pozisyon', ['pozisyon'=>'Uzman'])}}">UZMAN</a></div>
+                        <div class="trends_text"> @php $count = \App\Models\Job::where('pozisyon', 'Uzman')->get()->count(); @endphp {{ $count }} Adet İlan</div>
+                    </div>
+                    <div class="ml-auto">
+                        <div class="advert_image">
+                            <img src="{{ asset('assets') }}/images/uzman.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 advert_col">
+
+                <!-- Advert Item -->
+
+                <div class="advert d-flex flex-row align-items-center justify-content-start">
+                    <div class="advert_content">
+                        <div class="advert_title"><a href="{{route('pozisyon', ['pozisyon'=>'Yönetici'])}}">YÖNETİCİ</a></div>
+                        <div class="trends_text"> @php $count = \App\Models\Job::where('pozisyon', 'Yönetici')->get()->count(); @endphp {{ $count }} Adet İlan</div>
+                    </div>
+                    <div class="ml-auto">
+                        <div class="advert_image">
+                            <img src="{{ asset('assets') }}/images/yonetici.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-lg-4 advert_col">
+
+                <!-- Advert Item -->
+
+                <div class="advert d-flex flex-row align-items-center justify-content-start">
+                    <div class="advert_content">
+                        <div class="advert_title"><a href="{{route('pozisyon', ['pozisyon'=>'Yeni Başlayan'])}}">YENİ MEZUN</a></div>
+                        <div class="trends_text"> @php $count = \App\Models\Job::where('pozisyon', 'Yeni Başlayan')->get()->count(); @endphp {{ $count }} Adet İlan</div>
+                    </div>
+                    <div class="ml-auto">
+                        <div class="advert_image">
+                            <img src="{{ asset('assets') }}/images/mezun.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 advert_col">
+
+                <!-- Advert Item -->
+
+                <div class="advert d-flex flex-row align-items-center justify-content-start">
+                    <div class="advert_content">
+                        <div class="advert_title"><a href="{{route('pozisyon', ['pozisyon'=>'İşçi'])}}">İŞÇİ VE MAVİ YAKA</a></div>
+                        <div class="trends_text"> @php $count = \App\Models\Job::where('pozisyon', 'İşçi')->get()->count(); @endphp {{ $count }} Adet İlan</div>
+                    </div>
+                    <div class="ml-auto">
+                        <div class="advert_image">
+                            <img src="{{ asset('assets') }}/images/isci.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 advert_col">
+
+                <!-- Advert Item -->
+
+                <div class="advert d-flex flex-row align-items-center justify-content-start">
+                    <div class="advert_content">
+                        <div class="advert_title"><a href="{{route('pozisyon', ['pozisyon'=>'Hizmet Personeli'])}}">HİZMET PERSONELİ</a></div>
+                        <div class="trends_text"> @php $count = \App\Models\Job::where('pozisyon', 'Hizmet Personeli')->get()->count(); @endphp {{ $count }} Adet İlan</div>
+                    </div>
+                    <div class="ml-auto">
+                        <div class="advert_image">
+                            <img src="{{ asset('assets') }}/images/hizmet_personeli.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
 <!-- İlginizi Çekebilecek İlanlar -->
 
 <div class="trends">
@@ -51,136 +181,6 @@
     </div>
 </div>
 
-<!-- Bana Uygun İlanlar -->
-
-<div class="trends">
-    <div class="container">
-
-        <div class="row">
-
-            <div class="col-lg-4 advert_col">
-
-                <!-- Advert Item -->
-
-                <div class="advert d-flex flex-row align-items-center justify-content-start">
-                    @auth
-                        <div class="advert_content">
-                            <div class="advert_title"><a href="#">BANA UYGUN İLANLAR</a></div>
-                            <div class="trends_text">{{ Auth::user()->name }}</div>
-                        </div>
-                        <div class="ml-auto">
-                            <div class="advert_image">
-                                <img src="{{ Auth::user()->profile_photo_url }}" alt="">
-                            </div>
-                        </div>
-                    @endauth
-                    @guest
-                            <div class="advert_content">
-                                <div class="advert_title"><a href="#">BANA UYGUN İLANLAR</a></div>
-                            </div>
-                            <div class="ml-auto">
-                                <div class="advert_image">
-                                    <img src="{{ asset('assets') }}/images/adv_3.png" alt="">
-                                </div>
-                            </div>
-                    @endguest
-                </div>
-            </div>
-
-            <div class="col-lg-4 advert_col">
-
-                <!-- Advert Item -->
-
-                <div class="advert d-flex flex-row align-items-center justify-content-start">
-                    <div class="advert_content">
-                        <div class="advert_title"><a href="#">UZMAN</a></div>
-                        <div class="trends_text">350 İş İlanı</div>
-                    </div>
-                    <div class="ml-auto">
-                        <div class="advert_image">
-                            <img src="{{ asset('assets') }}/images/uzman.jpg" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 advert_col">
-
-                <!-- Advert Item -->
-
-                <div class="advert d-flex flex-row align-items-center justify-content-start">
-                    <div class="advert_content">
-                        <div class="advert_title"><a href="#">YÖNETİCİ</a></div>
-                        <div class="trends_text">350 İş İlanı</div>
-                    </div>
-                    <div class="ml-auto">
-                        <div class="advert_image">
-                            <img src="{{ asset('assets') }}/images/yonetici.jpg" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="row">
-
-            <div class="col-lg-4 advert_col">
-
-                <!-- Advert Item -->
-
-                <div class="advert d-flex flex-row align-items-center justify-content-start">
-                    <div class="advert_content">
-                        <div class="advert_title"><a href="#">YENİ MEZUN</a></div>
-                        <div class="trends_text">350 İş İlanı</div>
-                    </div>
-                    <div class="ml-auto">
-                        <div class="advert_image">
-                            <img src="{{ asset('assets') }}/images/mezun.jpg" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 advert_col">
-
-                <!-- Advert Item -->
-
-                <div class="advert d-flex flex-row align-items-center justify-content-start">
-                    <div class="advert_content">
-                        <div class="advert_title"><a href="#">İŞÇİ VE MAVİ YAKA</a></div>
-                        <div class="trends_text">350 İş İlanı</div>
-                    </div>
-                    <div class="ml-auto">
-                        <div class="advert_image">
-                            <img src="{{ asset('assets') }}/images/isci.jpg" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 advert_col">
-
-                <!-- Advert Item -->
-
-                <div class="advert d-flex flex-row align-items-center justify-content-start">
-                    <div class="advert_content">
-                        <div class="advert_title"><a href="#">HİZMET PERSONELİ</a></div>
-                        <div class="trends_text">350 İş İlanı</div>
-                    </div>
-                    <div class="ml-auto">
-                        <div class="advert_image">
-                            <img src="{{ asset('assets') }}/images/hizmet_personeli.jpg" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-</div>
-
 <!-- Bugün Yayınlanan/Part-time/Staj -->
 
 <div class="characteristics">
@@ -193,8 +193,9 @@
                 <div class="char_item d-flex flex-row align-items-center ">
                     <div class="char_icon"><img src="{{ asset('assets') }}/images/char_1.png" alt=""></div>
                     <div class="char_content">
-                        <div class="char_title"><a href="#">Bugün Yayınlanan İlanlar</a></div>
-                        <div class="char_subtitle">520 Adet</div>
+                        <div class="char_title"><a href="{{route('bugunyayinlanan')}}">Bugün Yayınlanan İlanlar</a></div>
+                        <div class="char_subtitle"> @php use Carbon\Carbon;$count = \App\Models\Job::whereDate('created_at', Carbon::today())->get()->count(); @endphp {{ $count }} Adet İlan</div>
+
                     </div>
                 </div>
             </div>
@@ -205,8 +206,8 @@
                 <div class="char_item d-flex flex-row align-items-center ">
                     <div class="char_icon"><img src="{{ asset('assets') }}/images/char_2.png" alt=""></div>
                     <div class="char_content">
-                        <div class="char_title"><a href="#">Part-time İlanlar</a></div>
-                        <div class="char_subtitle">450 Adet</div>
+                        <div class="char_title"><a href="{{route('parttime')}}">Part-time İlanları</a></div>
+                        <div class="char_subtitle"> @php $count = \App\Models\Job::where('calisma_sekli', 'Part Time')->get()->count(); @endphp {{ $count }} Adet İlan</div>
                     </div>
                 </div>
             </div>
@@ -217,8 +218,8 @@
                 <div class="char_item d-flex flex-row align-items-center ">
                     <div class="char_icon"><img src="{{ asset('assets') }}/images/char_3.png" alt=""></div>
                     <div class="char_content">
-                        <div class="char_title"><a href="#">Stajyer İlanları</a></div>
-                        <div class="char_subtitle">200 Adet</div>
+                        <div class="char_title"><a href="{{route('pozisyon', ['pozisyon'=>'Stajyer'])}}">Stajyer İlanları</a></div>
+                        <div class="char_subtitle"> @php $count = \App\Models\Job::where('pozisyon', 'Stajyer')->get()->count(); @endphp {{ $count }} Adet İlan</div>
                     </div>
                 </div>
             </div>

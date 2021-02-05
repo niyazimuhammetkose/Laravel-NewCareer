@@ -34,6 +34,7 @@
 
                         <div class="row">
                             <div class="col-md-12 grid-margin">
+                                <h6>Application Detail</h6>
                                 <div class="card">
                                     <div class="card-body">
                                         <form class="forms-sample">

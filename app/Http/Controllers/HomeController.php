@@ -7,6 +7,7 @@ use App\Models\Faq;
 use App\Models\Job;
 use App\Models\Message;
 use App\Models\Setting;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -70,6 +71,39 @@ class HomeController extends Controller
             'count' => $count,
         ];
         return view('home.category_jobs', $context);
+    }
+
+    //
+    public function pozisyon($pozisyon){
+        $datalist = Job::where('pozisyon', $pozisyon)->get();
+        $count = Job::where('pozisyon', $pozisyon)->get()->count();
+        $context = [
+            'datalist'=>$datalist,
+            'count' => $count,
+        ];
+        return view('home.joblist', $context);
+    }
+
+    //
+    public function parttime(){
+        $datalist = Job::where('calisma_sekli', 'Part Time')->get();
+        $count = Job::where('calisma_sekli', 'Part Time')->get()->count();
+        $context = [
+            'datalist'=>$datalist,
+            'count' => $count,
+        ];
+        return view('home.joblist', $context);
+    }
+
+    //
+    public function bugunyayinlanan(){
+        $datalist = Job::whereDate('created_at', Carbon::today())->get();
+        $count = Job::whereDate('created_at', Carbon::today())->get()->count();
+        $context = [
+            'datalist'=>$datalist,
+            'count' => $count,
+        ];
+        return view('home.joblist', $context);
     }
 
     //

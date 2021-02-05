@@ -6,9 +6,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c470b17a-aedd-408a-a250-3ffa00cd37e9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f732d4cc-3699-4149-aaa4-f5304d0ca1d4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f732d4cc-3699-4149-aaa4-f5304d0ca1d4.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/_header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/_header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Job.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Job.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/_sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/_sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/_content.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/_content.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/job_detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/job_detail.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/user_profile_app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/user_profile_app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/user_profile_app_detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/user_profile_app_detail.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -199,6 +205,7 @@
       <workItem from="1611232717097" duration="10348000" />
       <workItem from="1611347754613" duration="22157000" />
       <workItem from="1611492046434" duration="26096000" />
+      <workItem from="1612545288546" duration="4782000" />
     </task>
     <servers />
   </component>
