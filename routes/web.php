@@ -47,6 +47,7 @@ Route::get('/joblist/{search}/{count}', [HomeController::class, 'joblist'])->nam
 Route::get('/pozisyon/{pozisyon}', [HomeController::class, 'pozisyon'])->name('pozisyon');
 Route::get('/parttime', [HomeController::class, 'parttime'])->name('parttime');
 Route::get('/bugunyayinlanan', [HomeController::class, 'bugunyayinlanan'])->name('bugunyayinlanan');
+Route::get('/sektor/{id}', [HomeController::class, 'sektor'])->name('sektor');
 
 // where tipine göre sadece o tipin girilmesini sağlıyor.
 //Route::get('/test/{id}/{name}', [HomeController::class, 'test']) ->where(['id' =>'[0-9]+', 'name' =>'[A-Za-z]+']);
@@ -136,6 +137,15 @@ Route::middleware('admin')->prefix('admin')->group(function (){
         Route::get('delete/{id}', [\App\Http\Controllers\Admin\ApplicationController::class, 'destroy'])->name('admin_app_delete');
         Route::get('show/{id}', [\App\Http\Controllers\Admin\ApplicationController::class, 'show'])->name('admin_app_show');
     });
+
+    #Sektör
+    Route::get('sektor', [\App\Http\Controllers\Admin\SektorController::class, 'index'])->name('admin_sektor');
+    Route::get('sektor/create', [\App\Http\Controllers\Admin\SektorController::class, 'create'])->name('admin_sektor_create');
+    Route::post('sektor/store', [\App\Http\Controllers\Admin\SektorController::class, 'store'])->name('admin_sektor_store');
+    Route::get('sektor/edit/{id}', [\App\Http\Controllers\Admin\SektorController::class, 'edit'])->name('admin_sektor_edit');
+    Route::post('sektor/update/{id}', [\App\Http\Controllers\Admin\SektorController::class, 'update'])->name('admin_sektor_update');
+    Route::get('sektor/delete/{id}', [\App\Http\Controllers\Admin\SektorController::class, 'destroy'])->name('admin_sektor_delete');
+    Route::get('sektor/show/{id}', [\App\Http\Controllers\Admin\SektorController::class, 'show'])->name('admin_sektor_show');
 });
 
 Route::get('admin/login', [\App\Http\Controllers\Admin\HomeController::class, 'login'])->name('admin_login');

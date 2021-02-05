@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Faq;
 use App\Models\Job;
 use App\Models\Message;
+use App\Models\Sektor;
 use App\Models\Setting;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -25,9 +26,11 @@ class HomeController extends Controller
     public function index(){
         $sliderdata = Job::select('id', 'title', 'image', 'firma_adi', 'slug')->limit(6)->orderByDesc('id')->get();
         $picked = Job::select('id', 'title', 'image', 'firma_adi', 'slug')->limit(6)->inRandomOrder()->get();
+        $sektorlist = Sektor::all();
         $context = [
             'sliderdata'=>$sliderdata,
             'picked'=>$picked,
+            'sektorlist'=>$sektorlist,
         ];
         return view('home.index', $context);
     }
@@ -99,6 +102,17 @@ class HomeController extends Controller
     public function bugunyayinlanan(){
         $datalist = Job::whereDate('created_at', Carbon::today())->get();
         $count = Job::whereDate('created_at', Carbon::today())->get()->count();
+        $context = [
+            'datalist'=>$datalist,
+            'count' => $count,
+        ];
+        return view('home.joblist', $context);
+    }
+
+    //
+    public function sektor($id){
+        $datalist = Job::where('sektor_id', $id)->get();
+        $count = Job::where('sektor_id', $id)->get()->count();
         $context = [
             'datalist'=>$datalist,
             'count' => $count,

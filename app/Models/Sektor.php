@@ -10,7 +10,7 @@ class Sektor extends Model
     use HasFactory;
 
     # One To Many
-    public function jobs(){
+    public function job(){
         return $this->hasMany(Job::class);
     }
 }

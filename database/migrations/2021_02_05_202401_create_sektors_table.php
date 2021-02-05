@@ -15,8 +15,7 @@ class CreateSektorsTable extends Migration
     {
         Schema::create('sektors', function (Blueprint $table) {
             $table->id()->autoIncrement();
-            $table->string('name',25);
-            $table->integer('job_id');
+            $table->string('title', 25)->nullable();
             $table->timestamps();
         });
     }

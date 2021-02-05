@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'Admin Panel - İş İlanları')
+@section('title', 'Admin Panel - Sektör')
 
 @section('content')
     <div class="content-wrapper">
@@ -9,12 +9,12 @@
                 <div class="page-header">
                     <div class="quick-link-wrapper w-100 d-md-flex flex-md-wrap">
                         <ul class="quick-links">
-                            <li><a href="{{route('admin_jobs_add')}}" type="button" class="btn btn-info btn-fw">İş İlanı Ekle</a></li>
+                            <li><a href="{{route('admin_sektor_create')}}" type="button" class="btn btn-info btn-fw">Sektör Ekle</a></li>
                             @include('home.message')
                         </ul>
                         <ul class="quick-links ml-auto">
                             <li><a href="{{ route('admin_home') }}">Anasayfa</a></li>
-                            <li>İş İlanları</li>
+                            <li>Sektör</li>
                         </ul>
                     </div>
                 </div>
@@ -24,16 +24,12 @@
             <div class="col-md-12 grid-margin">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">İş İlanları</h4>
+                        <h4 class="card-title">Sektörler</h4>
                         <table class="table table-hover">
                             <thead>
                             <tr>
                                 <th>Id</th>
                                 <th>Title</th>
-                                <th>Category</th>
-                                <th>Company</th>
-                                <th>Image</th>
-                                <th>Status</th>
                                 <th colspan="2">Action</th>
                             </tr>
                             </thead>
@@ -42,16 +38,8 @@
                                 <tr>
                                     <td>{{ $rs->id }}</td>
                                     <td>{{ $rs->title }}</td>
-                                    <td>{{\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs->category, $rs->category->title)}}</td>
-                                    <td>{{ $rs->firma_adi }}</td>
-                                    <td>
-                                        @if($rs->image)
-                                            <img src="{{ \Illuminate\Support\Facades\Storage::url($rs->image) }}" height="30" alt="" class="img-sm profile-pic">
-                                        @endif
-                                    </td>
-                                    <td>{{ $rs->status }}</td>
-                                    <td><a href="{{route('admin_jobs_edit', ['id'=>$rs->id])}}"><i class="fa fa-pencil-square-o"></i></a></td>
-                                    <td><a href="{{route('admin_jobs_delete', ['id'=>$rs->id])}}" onclick="return confirm('İlan Silinecek! Emin misin?')"><i class="fa fa-trash-o"></i></a></td>
+                                    <td><a href="{{route('admin_sektor_edit', ['id'=>$rs->id])}}"><i class="fa fa-pencil-square-o"></i></a></td>
+                                    <td><a href="{{route('admin_sektor_delete', ['id'=>$rs->id])}}" onclick="return confirm('Sektör Silinecek! Emin misin?')"><i class="fa fa-trash-o"></i></a></td>
                                 </tr>
                             @endforeach
                             </tbody>

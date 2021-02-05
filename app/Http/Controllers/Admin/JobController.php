@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Job;
+use App\Models\Sektor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -33,7 +34,12 @@ class JobController extends Controller
     {
         //
         $datalist = Category::with('children')->get();
-        return view('admin.job_add', ['datalist' => $datalist]);
+        $sektorlist = Sektor::all();
+        $context = [
+            'datalist'=>$datalist,
+            'sektorlist'=>$sektorlist,
+        ];
+        return view('admin.job_add', $context);
     }
 
     /**
@@ -58,7 +64,7 @@ class JobController extends Controller
         $data->bolum= $request->input('bolüm');
         $data->yabanci_dil= $request->input('yabanci_dil');
         $data->firma_adi= $request->input('firma_adi');
-        $data->sektor= $request->input('sektor');
+        $data->sektor_id= $request->input('sektor_id');
         $data->departman= $request->input('departman');
         $data->calisma_sekli= $request->input('calisma_sekli');
         $data->pozisyon= $request->input('pozisyon');
@@ -67,7 +73,7 @@ class JobController extends Controller
         $data->status= $request->input('status');
         $data->slug= $request->input('slug');
         $data->save();
-        return redirect()->route('admin_jobs');
+        return redirect()->route('admin_jobs')->with('info', 'İş İlanı Eklendi!');
     }
 
     /**
@@ -92,7 +98,13 @@ class JobController extends Controller
         //
         $data = Job::find($id);
         $datalist = Category::with('children')->get();
-        return view('admin.job_edit',['data'=>$data, 'datalist'=>$datalist]);
+        $sektorlist = Sektor::all();
+        $context = [
+            'data'=>$data,
+            'datalist'=>$datalist,
+            'sektorlist'=>$sektorlist,
+        ];
+        return view('admin.job_edit', $context);
     }
 
     /**
@@ -117,7 +129,7 @@ class JobController extends Controller
         $data->bolum= $request->input('bolum');
         $data->yabanci_dil= $request->input('yabanci_dil');
         $data->firma_adi= $request->input('firma_adi');
-        $data->sektor= $request->input('sektor');
+        $data->sektor_id= $request->input('sektor_id');
         $data->departman= $request->input('departman');
         $data->calisma_sekli= $request->input('calisma_sekli');
         $data->pozisyon= $request->input('pozisyon');
@@ -129,7 +141,7 @@ class JobController extends Controller
             $data->image= Storage::putFile('images', $request->file('image'));
         }
         $data->save();
-        return redirect()->route('admin_jobs');
+        return redirect()->route('admin_jobs')->with('info', 'İş İlanı Güncellendi!');
     }
 
     /**
@@ -144,7 +156,7 @@ class JobController extends Controller
         //DB::table('jobs')->where('id', '=', $id)->delete();
         $data = Job::find($id);
         $data->delete();
-        return redirect()->route('admin_jobs');
+        return redirect()->route('admin_jobs')->with('info', 'İş İlanı Silindi!');
 
     }
 }

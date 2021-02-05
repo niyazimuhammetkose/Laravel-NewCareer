@@ -36,6 +36,9 @@
                         <a class="nav-link" href="{{ route('admin_category') }}">Kategoriler</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="{{ route('admin_sektor') }}">Sektörler</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{{ route('admin_jobs') }}">İlanlar</a>
                     </li>
                 </ul>

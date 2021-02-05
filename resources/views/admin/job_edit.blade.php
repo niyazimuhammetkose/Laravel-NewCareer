@@ -109,7 +109,13 @@
                             <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">Sektör</label>
                                 <div class="col-sm-9">
-                                    <input type="text" name="sektor" value="{{ $data->sektor }}"  class="form-control">
+                                    <select class="form-control" name="sektor_id">
+                                        @foreach( $sektorlist as $rs )
+                                            <option value="{{ $rs->id }}" @if ($rs->id == $data->sektor_id) selected="selected" @endif >
+                                            {{ $rs->title }}
+                                            </option>
+                                        @endforeach
+                                    </select>
                                 </div>
                             </div>
                             <div class="form-group row">

@@ -89,7 +89,7 @@
                                         <div class="form-group row">
                                             <label class="col-sm-3"><a class="quote_name">Sektör:</a></label>
                                             <div class="col-sm-9">
-                                                {{ $data->sektor }}
+                                                {{ $data->sektor->title }}
                                             </div>
                                         </div>
                                         <div class="form-group row">
@@ -145,7 +145,7 @@
                                 <form class="forms-sample">
                                     <div class="row">
                                         <strong>Firma sektörü:</strong>
-                                        {{ $data->sektor }}
+                                        {{ $data->sektor->title }}
                                     </div>
                                     <div class="row">
                                         <strong>Çalışma Şekli:</strong>

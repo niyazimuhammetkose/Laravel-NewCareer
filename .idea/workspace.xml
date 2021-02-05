@@ -8,13 +8,17 @@
     <list default="true" id="c470b17a-aedd-408a-a250-3ffa00cd37e9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/f732d4cc-3699-4149-aaa4-f5304d0ca1d4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f732d4cc-3699-4149-aaa4-f5304d0ca1d4.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/JobController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/JobController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Job.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Job.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Sektor.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_02_05_145208_create_sektors_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_02_05_163714_sektor.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/_sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/_sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/job.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/job.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/job_add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/job_add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/job_edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/job_edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/home/_content.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/_content.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/home/job_detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/job_detail.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/user_profile_app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/user_profile_app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/user_profile_app_detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/user_profile_app_detail.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -205,7 +209,7 @@
       <workItem from="1611232717097" duration="10348000" />
       <workItem from="1611347754613" duration="22157000" />
       <workItem from="1611492046434" duration="26096000" />
-      <workItem from="1612545288546" duration="4782000" />
+      <workItem from="1612545288546" duration="13665000" />
     </task>
     <servers />
   </component>
@@ -242,10 +246,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1610802277559" />
-    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1612475131754">
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1612558467922">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1612475131754" />
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1612558467922" />
     <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1612472699611">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -274,6 +278,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="9" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1610540799889" />
+    <state x="569" y="251" width="316" height="244" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1612555665828">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="569" y="251" width="316" height="244" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1366.728@0.0.1366.728" timestamp="1612555665828" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1611241788606">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

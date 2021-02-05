@@ -242,9 +242,9 @@
                     <div class="footer_title">Sektöre Göre İlanlar</div>
                     <div>
                         <ul>
-                            <li>Satış</li>
-                            <li>Sağlık</li>
-                            <li>Tekstil</li>
+                            @foreach($sektorlist as $rs)
+                                <li><a href="{{route('sektor', ['id'=>$rs->id])}}">{{ $rs->title }}</a></li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>

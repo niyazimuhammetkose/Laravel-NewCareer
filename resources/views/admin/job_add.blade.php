@@ -20,7 +20,7 @@
             <div class="col-md-12 grid-margin">
                 <div class="card">
                     <div class="card-body">
-                        <form class="forms-sample" action="{{route('admin_jobs_store')}}"method="post" enctype="multipart/form-data">
+                        <form class="forms-sample" action="{{route('admin_jobs_store')}}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">Category</label>
@@ -104,7 +104,11 @@
                             <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">Sektör</label>
                                 <div class="col-sm-9">
-                                    <input type="text" name="sektor" class="form-control">
+                                    <select class="form-control" name="sektor_id">
+                                        @foreach( $sektorlist as $rs )
+                                            <option value="{{ $rs->id }}">{{$rs->title}}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                             </div>
                             <div class="form-group row">
