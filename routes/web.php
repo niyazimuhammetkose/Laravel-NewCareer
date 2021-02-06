@@ -45,9 +45,12 @@ Route::get('/categoryjobs/{id}/{slug}', [HomeController::class, 'categoryjobs'])
 Route::post('/getjobs', [HomeController::class, 'getjobs'])->name('getjobs');
 Route::get('/joblist/{search}/{count}', [HomeController::class, 'joblist'])->name('joblist');
 Route::get('/pozisyon/{pozisyon}', [HomeController::class, 'pozisyon'])->name('pozisyon');
+Route::get('/banauygun', [HomeController::class, 'banauygun'])->name('banauygun');
 Route::get('/parttime', [HomeController::class, 'parttime'])->name('parttime');
 Route::get('/bugunyayinlanan', [HomeController::class, 'bugunyayinlanan'])->name('bugunyayinlanan');
 Route::get('/sektor/{id}', [HomeController::class, 'sektor'])->name('sektor');
+Route::get('/departman/{id}', [HomeController::class, 'departman'])->name('departman');
+Route::get('/sehir/{id}', [HomeController::class, 'sehir'])->name('sehir');
 
 // where tipine göre sadece o tipin girilmesini sağlıyor.
 //Route::get('/test/{id}/{name}', [HomeController::class, 'test']) ->where(['id' =>'[0-9]+', 'name' =>'[A-Za-z]+']);
@@ -146,6 +149,24 @@ Route::middleware('admin')->prefix('admin')->group(function (){
     Route::post('sektor/update/{id}', [\App\Http\Controllers\Admin\SektorController::class, 'update'])->name('admin_sektor_update');
     Route::get('sektor/delete/{id}', [\App\Http\Controllers\Admin\SektorController::class, 'destroy'])->name('admin_sektor_delete');
     Route::get('sektor/show/{id}', [\App\Http\Controllers\Admin\SektorController::class, 'show'])->name('admin_sektor_show');
+
+    #Departman
+    Route::get('departman', [\App\Http\Controllers\Admin\DepartmanController::class, 'index'])->name('admin_departman');
+    Route::get('departman/create', [\App\Http\Controllers\Admin\DepartmanController::class, 'create'])->name('admin_departman_create');
+    Route::post('departman/store', [\App\Http\Controllers\Admin\DepartmanController::class, 'store'])->name('admin_departman_store');
+    Route::get('departman/edit/{id}', [\App\Http\Controllers\Admin\DepartmanController::class, 'edit'])->name('admin_departman_edit');
+    Route::post('departman/update/{id}', [\App\Http\Controllers\Admin\DepartmanController::class, 'update'])->name('admin_departman_update');
+    Route::get('departman/delete/{id}', [\App\Http\Controllers\Admin\DepartmanController::class, 'destroy'])->name('admin_departman_delete');
+    Route::get('departman/show/{id}', [\App\Http\Controllers\Admin\DepartmanController::class, 'show'])->name('admin_departman_show');
+
+    #Sehir
+    Route::get('sehir', [\App\Http\Controllers\Admin\SehirController::class, 'index'])->name('admin_sehir');
+    Route::get('sehir/create', [\App\Http\Controllers\Admin\SehirController::class, 'create'])->name('admin_sehir_create');
+    Route::post('sehir/store', [\App\Http\Controllers\Admin\SehirController::class, 'store'])->name('admin_sehir_store');
+    Route::get('sehir/edit/{id}', [\App\Http\Controllers\Admin\SehirController::class, 'edit'])->name('admin_sehir_edit');
+    Route::post('sehir/update/{id}', [\App\Http\Controllers\Admin\SehirController::class, 'update'])->name('admin_sehir_update');
+    Route::get('sehir/delete/{id}', [\App\Http\Controllers\Admin\SehirController::class, 'destroy'])->name('admin_sehir_delete');
+    Route::get('sehir/show/{id}', [\App\Http\Controllers\Admin\SehirController::class, 'show'])->name('admin_sehir_show');
 });
 
 Route::get('admin/login', [\App\Http\Controllers\Admin\HomeController::class, 'login'])->name('admin_login');

@@ -39,6 +39,12 @@
                         <a class="nav-link" href="{{ route('admin_sektor') }}">Sektörler</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="{{ route('admin_departman') }}">Departmanlar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('admin_sehir') }}">Şehirler</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{{ route('admin_jobs') }}">İlanlar</a>
                     </li>
                 </ul>

@@ -121,19 +121,35 @@
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label">Sektör</label>
                                         <div class="col-sm-9">
-                                            <input type="text" name="sektor" value="{{ $data->sektor }}"  class="form-control">
+                                            <select class="form-control" name="sektor_id">
+                                                @foreach( $sektorlist as $rs )
+                                                    <option value="{{ $rs->id }}" @if ($rs->id == $data->sektor_id) selected="selected" @endif >
+                                                        {{ $rs->title }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label">Departman</label>
                                         <div class="col-sm-9">
-                                            <input type="text" name="departman" value="{{ $data->departman }}"  class="form-control">
+                                            <select class="form-control" name="departman_id">
+                                                @foreach( $departmanlist as $rs )
+                                                    <option value="{{ $rs->id }}" @if ($rs->id == $data->departman_id) selected="selected" @endif >
+                                                        {{ $rs->title }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label">Çalışma Şekli</label>
                                         <div class="col-sm-9">
-                                            <input type="text" name="calisma_sekli" value="{{ $data->calisma_sekli }}"  class="form-control">
+                                            <select class="form-control" name="calisma_sekli">
+                                                <option selected="selected">{{ $data->calisma_sekli }}</option>
+                                                <option>Sürekli / Tam Zamanlı</option>
+                                                <option>Part Time</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -145,23 +161,19 @@
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label">Şehir</label>
                                         <div class="col-sm-9">
-                                            <input type="text" name="sehir" value="{{ $data->sehir }}"  class="form-control">
+                                            <select class="form-control" name="sehir_id">
+                                                @foreach( $sehirlist as $rs )
+                                                    <option value="{{ $rs->id }}" @if ($rs->id == $data->sehir_id) selected="selected" @endif >
+                                                        {{ $rs->title }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label">Slug</label>
                                         <div class="col-sm-9">
                                             <input type="text" name="slug" value="{{ $data->slug }}"  class="form-control">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-sm-3 col-form-label">Status</label>
-                                        <div class="col-sm-9">
-                                            <select class="form-control" name="status">
-                                                <option selected="selected">{{ $data->status }}</option>
-                                                <option>True</option>
-                                                <option>False</option>
-                                            </select>
                                         </div>
                                     </div>
                                     <button type="submit" class="btn btn-success btn-fw"><i class="mdi mdi-check"></i>İş İlanı Güncelle</button>

@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Departman;
 use App\Models\Faq;
 use App\Models\Job;
 use App\Models\Message;
+use App\Models\Sehir;
 use App\Models\Sektor;
 use App\Models\Setting;
 use Carbon\Carbon;
@@ -27,10 +29,14 @@ class HomeController extends Controller
         $sliderdata = Job::select('id', 'title', 'image', 'firma_adi', 'slug')->limit(6)->orderByDesc('id')->get();
         $picked = Job::select('id', 'title', 'image', 'firma_adi', 'slug')->limit(6)->inRandomOrder()->get();
         $sektorlist = Sektor::all();
+        $departmanlist = Departman::all();
+        $sehirlist = Sehir::all();
         $context = [
             'sliderdata'=>$sliderdata,
             'picked'=>$picked,
             'sektorlist'=>$sektorlist,
+            'departmanlist'=>$departmanlist,
+            'sehirlist'=>$sehirlist,
         ];
         return view('home.index', $context);
     }
@@ -88,6 +94,17 @@ class HomeController extends Controller
     }
 
     //
+    public function banauygun(){
+        $datalist = Job::limit(6)->inRandomOrder()->get();
+        $count = 6;
+        $context = [
+            'datalist'=>$datalist,
+            'count' => $count,
+        ];
+        return view('home.joblist', $context);
+    }
+
+    //
     public function parttime(){
         $datalist = Job::where('calisma_sekli', 'Part Time')->get();
         $count = Job::where('calisma_sekli', 'Part Time')->get()->count();
@@ -113,6 +130,28 @@ class HomeController extends Controller
     public function sektor($id){
         $datalist = Job::where('sektor_id', $id)->get();
         $count = Job::where('sektor_id', $id)->get()->count();
+        $context = [
+            'datalist'=>$datalist,
+            'count' => $count,
+        ];
+        return view('home.joblist', $context);
+    }
+
+    //
+    public function departman($id){
+        $datalist = Job::where('departman_id', $id)->get();
+        $count = Job::where('departman_id', $id)->get()->count();
+        $context = [
+            'datalist'=>$datalist,
+            'count' => $count,
+        ];
+        return view('home.joblist', $context);
+    }
+
+    //
+    public function sehir($id){
+        $datalist = Job::where('sehir_id', $id)->get();
+        $count = Job::where('sehir_id', $id)->get()->count();
         $context = [
             'datalist'=>$datalist,
             'count' => $count,

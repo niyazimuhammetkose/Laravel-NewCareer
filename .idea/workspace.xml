@@ -10,15 +10,21 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/JobController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/JobController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Sektor.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_02_05_145208_create_sektors_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_02_05_163714_sektor.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/JobController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/JobController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Job.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Job.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_17_142147_create_jobs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_17_142147_create_jobs_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_17_142309_job.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/_sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/_sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/job.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/job.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/job_add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/job_add.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/job_edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/job_edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/home/_content.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/_content.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/category_jobs.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/category_jobs.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/home/job_detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/job_detail.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/joblist.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/joblist.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/search_jobs.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/search_jobs.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/user_profile_job.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/user_profile_job.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/user_profile_job_add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/user_profile_job_add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/user_profile_job_edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/user_profile_job_edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -209,7 +215,7 @@
       <workItem from="1611232717097" duration="10348000" />
       <workItem from="1611347754613" duration="22157000" />
       <workItem from="1611492046434" duration="26096000" />
-      <workItem from="1612545288546" duration="13665000" />
+      <workItem from="1612545288546" duration="20130000" />
     </task>
     <servers />
   </component>
@@ -246,10 +252,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1610802277559" />
-    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1612558467922">
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1612569586156">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1612558467922" />
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1612569586156" />
     <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1612472699611">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

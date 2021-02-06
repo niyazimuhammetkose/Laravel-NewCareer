@@ -95,7 +95,7 @@
                                         <div class="form-group row">
                                             <label class="col-sm-3"><a class="quote_name">Departman:</a></label>
                                             <div class="col-sm-9">
-                                                {{ $data->departman }}
+                                                {{ $data->departman->title }}
                                             </div>
                                         </div>
                                         <div class="form-group row">
@@ -113,7 +113,7 @@
                                         <div class="form-group row">
                                             <label class="col-sm-3"><a class="quote_name">Şehir:</a></label>
                                             <div class="col-sm-9">
-                                                {{ $data->sehir }}
+                                                {{ $data->sehir->title }}
                                             </div>
                                         </div>
                                     </form>

@@ -23,4 +23,14 @@ class Job extends Model
     public function sektor(){
         return $this->belongsTo(Sektor::class);
     }
+
+    # One To Many (Inverse)
+    public function departman(){
+        return $this->belongsTo(Departman::class);
+    }
+
+    # One To Many (Inverse)
+    public function sehir(){
+        return $this->belongsTo(Sehir::class);
+    }
 }

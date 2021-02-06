@@ -32,7 +32,7 @@ class CreateJobsTable extends Migration
 
             $table->string('sektor',75)->nullable();
             $table->string('departman',75)->nullable();
-            $table->string('calisma_sekli',75)->nullable();
+            $table->string('calisma_sekli',75)->nullable()->default('Sürekli / Tam Zamanlı');
             $table->string('pozisyon',75)->nullable();
             $table->string('sehir',75)->nullable();
 

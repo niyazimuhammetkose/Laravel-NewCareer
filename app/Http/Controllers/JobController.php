@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Departman;
 use App\Models\Job;
+use App\Models\Sehir;
+use App\Models\Sektor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -31,7 +34,16 @@ class JobController extends Controller
     {
         //
         $datalist = Category::with('children')->get();
-        return view('home.user_profile_job_add', ['datalist' => $datalist]);
+        $sektorlist = Sektor::all();
+        $departmanlist = Departman::all();
+        $sehirlist = Sehir::all();
+        $context = [
+            'datalist'=>$datalist,
+            'sektorlist'=>$sektorlist,
+            'departmanlist'=>$departmanlist,
+            'sehirlist'=>$sehirlist,
+        ];
+        return view('home.user_profile_job_add', $context);
     }
 
     /**
@@ -56,13 +68,12 @@ class JobController extends Controller
         $data->bolum= $request->input('bolüm');
         $data->yabanci_dil= $request->input('yabanci_dil');
         $data->firma_adi= $request->input('firma_adi');
-        $data->sektor= $request->input('sektor');
-        $data->departman= $request->input('departman');
+        $data->sektor_id= $request->input('sektor_id');
+        $data->departman_id= $request->input('departman_id');
         $data->calisma_sekli= $request->input('calisma_sekli');
         $data->pozisyon= $request->input('pozisyon');
-        $data->sehir= $request->input('sehir');
+        $data->sehir_id= $request->input('sehir_id');
         $data->user_id= Auth::id();
-        $data->status= $request->input('status');
         $data->slug= $request->input('slug');
         $data->save();
         return redirect()->route('user_jobs')->with('info', 'İş İlanı Eklendi!');
@@ -90,7 +101,17 @@ class JobController extends Controller
         //
         $data = Job::find($id);
         $datalist = Category::with('children')->get();
-        return view('home.user_profile_job_edit',['data'=>$data, 'datalist'=>$datalist]);
+        $sektorlist = Sektor::all();
+        $departmanlist = Departman::all();
+        $sehirlist = Sehir::all();
+        $context = [
+            'data'=>$data,
+            'datalist'=>$datalist,
+            'sektorlist'=>$sektorlist,
+            'departmanlist'=>$departmanlist,
+            'sehirlist'=>$sehirlist,
+        ];
+        return view('home.user_profile_job_edit', $context);
     }
 
     /**
@@ -115,13 +136,12 @@ class JobController extends Controller
         $data->bolum= $request->input('bolum');
         $data->yabanci_dil= $request->input('yabanci_dil');
         $data->firma_adi= $request->input('firma_adi');
-        $data->sektor= $request->input('sektor');
-        $data->departman= $request->input('departman');
+        $data->sektor_id= $request->input('sektor_id');
+        $data->departman_id= $request->input('departman_id');
         $data->calisma_sekli= $request->input('calisma_sekli');
         $data->pozisyon= $request->input('pozisyon');
-        $data->sehir= $request->input('sehir');
+        $data->sehir_id= $request->input('sehir_id');
         $data->user_id= Auth::id();
-        $data->status= $request->input('status');
         $data->slug= $request->input('slug');
         if($request->file('image')!=null){
             $data->image= Storage::putFile('images', $request->file('image'));

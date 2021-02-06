@@ -116,19 +116,30 @@
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label">Sektör</label>
                                         <div class="col-sm-9">
-                                            <input type="text" name="sektor" class="form-control">
+                                            <select class="form-control" name="sektor_id">
+                                                @foreach( $sektorlist as $rs )
+                                                    <option value="{{ $rs->id }}">{{$rs->title}}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label">Departman</label>
                                         <div class="col-sm-9">
-                                            <input type="text" name="departman" class="form-control">
+                                            <select class="form-control" name="departman_id">
+                                                @foreach( $departmanlist as $rs )
+                                                    <option value="{{ $rs->id }}">{{$rs->title}}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label">Çalışma Şekli</label>
                                         <div class="col-sm-9">
-                                            <input type="text" name="calisma_sekli" class="form-control">
+                                            <select class="form-control" name="status">
+                                                <option selected="selected">Sürekli / Tam Zamanlı</option>
+                                                <option>Part Time</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -140,22 +151,17 @@
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label">Şehir</label>
                                         <div class="col-sm-9">
-                                            <input type="text" name="sehir" class="form-control">
+                                            <select class="form-control" name="sehir_id">
+                                                @foreach( $sehirlist as $rs )
+                                                    <option value="{{ $rs->id }}">{{$rs->title}}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label">Slug</label>
                                         <div class="col-sm-9">
                                             <input type="text" name="slug" class="form-control">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-sm-3 col-form-label">Status</label>
-                                        <div class="col-sm-9">
-                                            <select class="form-control" name="status">
-                                                <option selected="selected">False</option>
-                                                <option>True</option>
-                                            </select>
                                         </div>
                                     </div>
 

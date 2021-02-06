@@ -48,7 +48,7 @@
                                 <div class="single_post_quote text-center">
                                     <div class="quote_text"><h6>{{ $rs->firma_adi }}</h6></div>
                                     <div class="quote_name"><a href="{{route('job',['id' => $rs->id, 'slug' => $rs->slug])}}">{{ $rs->title }}</a></div>
-                                    <div class="quote_image"><a>{{ $rs->sehir }}</a></div>
+                                    <div class="quote_image"><a>{{ $rs->sehir->title }}</a></div>
                                 </div>
                             @endforeach
                         </div>

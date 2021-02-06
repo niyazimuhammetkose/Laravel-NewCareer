@@ -55,8 +55,8 @@
                                             @foreach( $datalist as $rs )
                                                 <tr>
                                                     <td>{{ $rs->id }}</td>
-                                                    <td>{{ $rs->title }}</td>
-                                                    <td>{{\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs->category, $rs->category->title)}}</td>
+                                                    <td><a href="{{ route('job', ['id' => $rs->id, 'slug' => $rs->slug]) }}">{{ $rs->title }}</a></td>
+                                                    <td><a href="{{route('categoryjobs', ['id' => $rs->category->id, 'slug' => $rs->category->slug])}}">{{\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs->category, $rs->category->title)}}</a></td>
                                                     <td>{{ $rs->firma_adi }}</td>
                                                     <td>{{ $rs->status }}</td>
                                                     <td><a href="{{route('user_jobs_edit', ['id'=>$rs->id])}}"><i class="fa fa-pencil-square-o"></i></a></td>

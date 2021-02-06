@@ -12,7 +12,7 @@
                 <div class="advert d-flex flex-row align-items-center justify-content-start">
                     @auth
                         <div class="advert_content">
-                            <div class="advert_title"><a href="">BANA UYGUN İLANLAR</a></div>
+                            <div class="advert_title"><a href="{{ route('banauygun') }}">BANA UYGUN İLANLAR</a></div>
                             <div class="trends_text">{{ Auth::user()->name }}</div>
                         </div>
                         <div class="ml-auto">
@@ -254,9 +254,9 @@
                     <div class="footer_title">Departmanlara Göre İlanlar</div>
                     <div>
                         <ul>
-                            <li>Satış</li>
-                            <li>Sağlık</li>
-                            <li>Tekstil</li>
+                            @foreach($departmanlist as $rs)
+                                <li><a href="{{route('departman', ['id'=>$rs->id])}}">{{ $rs->title }}</a></li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
@@ -266,9 +266,9 @@
                     <div class="footer_title">İllere Göre İlanlar</div>
                     <div>
                         <ul>
-                            <li>Satış</li>
-                            <li>Sağlık</li>
-                            <li>Tekstil</li>
+                            @foreach($sehirlist as $rs)
+                                <li><a href="{{route('sehir', ['id'=>$rs->id])}}">{{ $rs->title }}</a></li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>

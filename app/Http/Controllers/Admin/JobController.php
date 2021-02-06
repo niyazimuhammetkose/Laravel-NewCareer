@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Departman;
 use App\Models\Job;
+use App\Models\Sehir;
 use App\Models\Sektor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -35,9 +37,13 @@ class JobController extends Controller
         //
         $datalist = Category::with('children')->get();
         $sektorlist = Sektor::all();
+        $departmanlist = Departman::all();
+        $sehirlist = Sehir::all();
         $context = [
             'datalist'=>$datalist,
             'sektorlist'=>$sektorlist,
+            'departmanlist'=>$departmanlist,
+            'sehirlist'=>$sehirlist,
         ];
         return view('admin.job_add', $context);
     }
@@ -65,10 +71,10 @@ class JobController extends Controller
         $data->yabanci_dil= $request->input('yabanci_dil');
         $data->firma_adi= $request->input('firma_adi');
         $data->sektor_id= $request->input('sektor_id');
-        $data->departman= $request->input('departman');
+        $data->departman_id= $request->input('departman_id');
         $data->calisma_sekli= $request->input('calisma_sekli');
         $data->pozisyon= $request->input('pozisyon');
-        $data->sehir= $request->input('sehir');
+        $data->sehir_id= $request->input('sehir_id');
         $data->user_id= Auth::id();
         $data->status= $request->input('status');
         $data->slug= $request->input('slug');
@@ -99,10 +105,14 @@ class JobController extends Controller
         $data = Job::find($id);
         $datalist = Category::with('children')->get();
         $sektorlist = Sektor::all();
+        $departmanlist = Departman::all();
+        $sehirlist = Sehir::all();
         $context = [
             'data'=>$data,
             'datalist'=>$datalist,
             'sektorlist'=>$sektorlist,
+            'departmanlist'=>$departmanlist,
+            'sehirlist'=>$sehirlist,
         ];
         return view('admin.job_edit', $context);
     }
@@ -130,10 +140,10 @@ class JobController extends Controller
         $data->yabanci_dil= $request->input('yabanci_dil');
         $data->firma_adi= $request->input('firma_adi');
         $data->sektor_id= $request->input('sektor_id');
-        $data->departman= $request->input('departman');
+        $data->departman_id= $request->input('departman_id');
         $data->calisma_sekli= $request->input('calisma_sekli');
         $data->pozisyon= $request->input('pozisyon');
-        $data->sehir= $request->input('sehir');
+        $data->sehir_id= $request->input('sehir_id');
         $data->user_id= Auth::id();
         $data->status= $request->input('status');
         $data->slug= $request->input('slug');
