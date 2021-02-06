@@ -33,7 +33,7 @@
                         <div class="single_post_quote text-center">
                             <div class="quote_text"><h6>{{ $data->firma_adi }}</h6></div>
                             <div class="quote_name"><a href="{{route('job',['id' => $data->id, 'slug' => $data->slug])}}">{{ $data->title }}</a></div>
-                            <div class="quote_image"><a>{{ $data->sehir }}</a></div>
+                            <div class="quote_image"><a>{{ $data->sehir->title }}</a></div>
                         </div>
                     </div>
 
